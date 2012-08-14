@@ -1,0 +1,19 @@
+[user]
+	name = Justin Downing
+	email = justin@downing.us
+
+[color]
+	ui = auto
+
+[push]
+	default = tracking
+
+[rerere]
+	enabled = true
+
+[alias]
+	up = pull --rebase
+	st = status
+
+[credential]
+	credentialhelper = osxkeychain
