@@ -1,6 +1,7 @@
 /*
 !.vim*
 .viminfo
+.vim/.*
 !.git*
 !.bashrc
 !.zshrc
