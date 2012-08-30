@@ -35,7 +35,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
 
 # rbenv
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 eval "$(rbenv init -)"
 
 # AWS
