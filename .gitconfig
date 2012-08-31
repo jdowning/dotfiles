@@ -27,3 +27,5 @@
   st = status
 [credential]
   credentialhelper = osxkeychain
+[core]
+	editor = vim
