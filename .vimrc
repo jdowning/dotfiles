@@ -3,7 +3,9 @@ call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 syntax on
-colorscheme molokai
+colorscheme Tomorrow-Night-Bright
+"colorscheme molokai
+set number
 set hlsearch
 set bs=2
 set ai
