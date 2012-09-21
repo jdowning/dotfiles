@@ -1,0 +1,10 @@
+alias pd='cd ~/dev/puppet'
+alias mvim="open -a macvim"
+alias vagrant='nocorrect vagrant'
+function 'del_host' { gsed -i ${1}d ~/.ssh/known_hosts; }
+#ERB
+function 'erb_check' { echo -n "\033[1;32m${1}:\033[0m " && erb -P -x -T '-' ${1} | ruby -c; }
+alias erb_check_all="for i in *.erb; do echo -n \"\033[1;32m\$i:\033[0m \" && erb -P -x -T '-' \$i | ruby -c; done | column -t"
+#DNS
+alias dns-normal='sudo networksetup -setdnsservers Wi-Fi 192.168.5.1'
+alias dns-google='sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4'
