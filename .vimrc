@@ -30,8 +30,9 @@ au VimLeave * if filereadable("[path here]/.netrwhist")|call delete("[path here]
 nnoremap ; :
 
 nmap <F3> :NumbersToggle<CR>        " mapping f3 to NumbersToggle
-set laststatus=2                    " Always show the statusline
 
 " Enable fancy mode 
 let g:Powerline_symbols = 'fancy'   " Powerline
-
+set encoding=utf-8
+set nocompatible
+set laststatus=2

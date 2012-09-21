@@ -34,6 +34,9 @@ plugins=(git github osx ruby rbenv vagrant brew zsh-output-highlighting)
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
 
+# color clock on the right
+RPROMPT="${FG[117]}%D{%T %Z %m-%d-%Y}%{$reset_color%}"
+
 # rbenv
 export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 eval "$(rbenv init -)"
