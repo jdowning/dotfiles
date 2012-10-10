@@ -118,3 +118,6 @@
 [submodule ".vim/bundle/ctrip"]
 	path = .vim/bundle/ctrip
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/jshint"]
+	path = .vim/bundle/jshint
+	url = git://github.com/walm/jshint.vim.git
