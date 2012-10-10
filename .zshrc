@@ -38,7 +38,7 @@ source $HOME/.zsh_aliases
 RPROMPT="${FG[117]}%D{%T %Z %m-%d-%Y}%{$reset_color%}"
 
 # rbenv
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="$HOME/.rbenv/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 eval "$(rbenv init -)"
 
 # AWS
