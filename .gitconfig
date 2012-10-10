@@ -1,31 +1,32 @@
 [user]
-  name = Justin Downing
-  email = justin@downing.us
+	name = Justin Downing
+	email = justin@downing.us
 [color]
-  ui = auto
+	ui = auto
 [color "branch"]
-  current = yellow black
-  local = yellow
-  remote = magenta
+	current = yellow black
+	local = yellow
+	remote = magenta
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red
-  new = green
-  whitespace = white reverse
+	meta = yellow bold
+	frag = magenta bold
+	old = red
+	new = green
+	whitespace = white reverse
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan reverse
-  branch = magenta
+	added = yellow
+	changed = green
+	untracked = cyan reverse
+	branch = magenta
 [push]
-  default = tracking
+	default = tracking
 [rerere]
-  enabled = true
+	enabled = true
 [alias]
-  up = pull --rebase
-  st = status
+	up = pull --rebase
+	st = status
+	hist = log --all --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
 [credential]
-  credentialhelper = osxkeychain
+	credentialhelper = osxkeychain
 [core]
 	editor = vim
