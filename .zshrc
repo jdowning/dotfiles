@@ -34,6 +34,10 @@ plugins=(git github osx ruby rbenv vagrant brew zsh-output-highlighting)
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
 
+# dirs
+DIRSTACKSIZE=8
+setopt autopushd pushdminus pushdsilent pushdtohome
+
 # color clock on the right
 RPROMPT="${FG[117]}%D{%T %Z %m-%d-%Y}%{$reset_color%}"
 
