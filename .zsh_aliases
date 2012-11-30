@@ -1,6 +1,7 @@
 alias pd='cd ~/dev/atm/puppet'
 alias mvim="open -a macvim"
-#alias vagrant='nocorrect vagrant'
+alias vagrant='nocorrect vagrant'
+alias puppet='nocorrect puppet'
 function 'del_host' { gsed -i ${1}d ~/.ssh/known_hosts; }
 alias dh='dirs -v'
 
