@@ -5,6 +5,7 @@ alias puppet='nocorrect puppet'
 function 'del_host' { gsed -i ${1}d ~/.ssh/known_hosts; }
 alias dh='dirs -v'
 alias vag='vagrant'
+alias folder-size='du -s ./* | sort -n | cut -f 2- | xargs -Ix du -sh x'
 
 #ERB
 function 'erb_check' { echo -n "\033[1;32m${1}:\033[0m " && erb -P -x -T '-' ${1} | ruby -c; }
