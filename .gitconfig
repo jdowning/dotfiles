@@ -38,7 +38,7 @@
 	ci = commit
 	co = checkout
 	br = branch 
-	diff = diff --word-diff
+	#diff = diff --word-diff
 	dc = diff --cached
 	r = reset
 	r1 = reset HEAD^
@@ -53,3 +53,4 @@
 	credentialhelper = osxkeychain
 [core]
 	editor = vim
+	pager = "less -F -X"
