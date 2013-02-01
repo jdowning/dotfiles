@@ -1,13 +1,15 @@
 alias pd='cd ~/dev/atm/puppet'
+alias be='bundle exec'
 alias mvim="open -a macvim"
-alias vagrant='nocorrect vagrant'
-alias vagkill='nocorrect vagrant destroy -f'
 alias puppet='nocorrect puppet'
 function 'del_host' { gsed -i ${1}d ~/.ssh/known_hosts; }
 alias dh='dirs -v'
-alias vag='vagrant'
-alias be='bundle exec'
 alias folder-size='du -s ./* | sort -n | cut -f 2- | xargs -Ix du -sh x'
+
+#Vagrant
+alias vagrant='nocorrect vagrant'
+alias v='nocorrect vagrant'
+alias vkill='nocorrect vagrant destroy -f'
 
 #ERB
 function 'erb_check' { echo -n "\033[1;32m${1}:\033[0m " && erb -P -x -T '-' ${1} | ruby -c; }
