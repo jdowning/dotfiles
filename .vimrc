@@ -9,6 +9,7 @@ colorscheme Tomorrow-Night-Bright
 set bs=2
 set ai
 set ruler
+set paste
 set pastetoggle=<F2>
 set title         " change the terminal's title
 set tabstop=4     " a tab is four spaces
@@ -36,3 +37,9 @@ let g:Powerline_symbols = 'fancy'   " Powerline
 set encoding=utf-8
 set nocompatible
 set laststatus=2
+
+" Disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
