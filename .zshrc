@@ -29,7 +29,7 @@ ZSH_THEME="muse"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github osx ruby rbenv vagrant brew)
+plugins=(git github osx ruby rbenv vagrant brew bundler capistrano)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
@@ -42,7 +42,7 @@ setopt autopushd pushdminus pushdsilent pushdtohome
 RPROMPT="${FG[117]}%D{%T %Z %m-%d-%Y}%{$reset_color%}"
 
 # rbenv
-export PATH="/usr/local/opt/rbenv/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/opt/rbenv/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 eval "$(rbenv init -)"
 
 # AWS

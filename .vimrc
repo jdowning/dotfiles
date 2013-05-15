@@ -9,7 +9,7 @@ colorscheme Tomorrow-Night-Bright
 set bs=2
 set ai
 set ruler
-set paste
+set clipboard=unnamed
 set pastetoggle=<F2>
 set title         " change the terminal's title
 set tabstop=4     " a tab is four spaces
