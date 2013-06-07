@@ -126,3 +126,6 @@
 	path = .vim/bundle/jshint
 	url = git://github.com/walm/jshint.vim.git
 	ignore = untracked
+[submodule ".vim/bundle/vim-nginx"]
+	path = .vim/bundle/vim-nginx
+	url = https://github.com/evanmiller/nginx-vim-syntax.git
