@@ -129,3 +129,6 @@
 [submodule ".vim/bundle/vim-nginx"]
 	path = .vim/bundle/vim-nginx
 	url = https://github.com/evanmiller/nginx-vim-syntax.git
+[submodule ".vim/bundle/vim-json"]
+	path = .vim/bundle/vim-json
+	url = https://github.com/elzr/vim-json
