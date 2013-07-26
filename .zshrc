@@ -33,6 +33,7 @@ plugins=(git github osx ruby rbenv vagrant brew bundler capistrano)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
+export EDITOR=vim
 
 # dirs
 DIRSTACKSIZE=8
