@@ -46,6 +46,10 @@ RPROMPT="${FG[117]}%D{%T %Z %m-%d-%Y}%{$reset_color%}"
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/opt/rbenv/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 eval "$(rbenv init -)"
 
+# hub
+export FPATH=$FPATH:/usr/local/share/zsh/site-functions
+eval "$(hub alias -s)"
+
 # AWS
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 export EC2_PRIVATE_KEY="$HOME/.aws/pk.pem"
