@@ -35,6 +35,15 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
 export EDITOR=vim
 
+# Speed up the zsh completion
+fpath=(/usr/local/share/zsh-completions $fpath)
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+__git_files () {
+    _wanted files expl 'local files' _files
+}
+
 # dirs
 DIRSTACKSIZE=8
 setopt autopushd pushdminus pushdsilent pushdtohome
@@ -51,10 +60,9 @@ export FPATH=$FPATH:/usr/local/share/zsh/site-functions
 eval "$(hub alias -s)"
 
 # AWS
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+source /usr/local/bin/aws_zsh_completer.sh
 export EC2_PRIVATE_KEY="$HOME/.aws/pk.pem"
 export EC2_CERT="$HOME/.aws/cert.pem"
+export AWS_CONFIG_FILE=$HOME/.aws/config
 export AWS_CREDENTIAL_FILE="$HOME/.aws/aws-credentials-master"
-export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
-export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
-export AWS_IAM_HOME="/usr/local/Cellar/aws-iam-tools/1.5.0/jars"
+export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
