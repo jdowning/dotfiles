@@ -1,7 +1,3 @@
-[submodule ".vim/bundle/vim-ruby-debugger"]
-	path = .vim/bundle/vim-ruby-debugger
-	url = git://github.com/astashov/vim-ruby-debugger.git
-	ignore = untracked
 [submodule ".vim/bundle/vim-yaml"]
 	path = .vim/bundle/vim-yaml
 	url = git://github.com/avakhov/vim-yaml.git
