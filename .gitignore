@@ -1,7 +1,8 @@
 /*
 !.vim*
-.viminfo
-.vim/.*
 !.git*
 !.bashrc
 !.zshrc
+.aws*
+.viminfo
+.vim/.*
