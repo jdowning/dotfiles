@@ -52,6 +52,7 @@ setopt autopushd pushdminus pushdsilent pushdtohome
 RPROMPT="${FG[117]}%D{%T %Z %m-%d-%Y}%{$reset_color%}"
 
 # rbenv
+export RBENV_ROOT=/usr/local/opt/rbenv
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/opt/rbenv/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 eval "$(rbenv init -)"
 
