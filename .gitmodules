@@ -10,10 +10,6 @@
 	path = .vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
 	ignore = untracked
-[submodule ".vim/bundle/snipmate.vim"]
-	path = .vim/bundle/snipmate.vim
-	url = git://github.com/msanders/snipmate.vim.git
-	ignore = untracked
 [submodule ".vim/bundle/vim-javascript"]
 	path = .vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
