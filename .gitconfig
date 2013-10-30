@@ -54,3 +54,4 @@
 [core]
 	editor = vim
 	pager = "less -F -X"
+	filemode = true
