@@ -1,7 +1,8 @@
 /*
-!.vim*
-!.git*
 !.bashrc
+!.config/fish/config.fish
+!.git*
+!.vim*
 !.zshrc
 .aws*
 .viminfo

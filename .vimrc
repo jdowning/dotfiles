@@ -5,6 +5,7 @@ call pathogen#helptags()
 filetype plugin indent on
 syntax on
 colorscheme Tomorrow-Night-Bright
+set shell=zsh
 
 set autoindent                                               " always set autoindenting on
 set backspace=2                                              " Fix broken backspace in some setups
