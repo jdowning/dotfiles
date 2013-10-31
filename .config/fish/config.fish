@@ -1,7 +1,7 @@
 set -U EDITOR vim
 set -U fish_greeting ''
 
-set -x PATH /usr/local/bin $PATH
+set -x PATH /usr/local/bin /usr/local/sbin $PATH
 set -x AWS_CONFIG_FILE $HOME/.aws/config
 
 # rbenv
