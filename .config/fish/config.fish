@@ -3,6 +3,7 @@ set -U fish_greeting ''
 
 set -x PATH /usr/local/bin /usr/local/sbin $PATH
 set -x AWS_CONFIG_FILE $HOME/.aws/config
+source $HOME/.aws/aws.fish
 
 # rbenv
 set -x RBENV_ROOT /usr/local/opt/rbenv
