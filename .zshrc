@@ -53,7 +53,7 @@ RPROMPT="${FG[117]}%D{%T %Z %m-%d-%Y}%{$reset_color%}"
 
 # rbenv
 export RBENV_ROOT=/usr/local/opt/rbenv
-export PATH="/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/opt/rbenv/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="/usr/local/opt/rbenv/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 eval "$(rbenv init -)"
 
 # hub
@@ -62,8 +62,8 @@ eval "$(hub alias -s)"
 
 # AWS
 source /usr/local/bin/aws_zsh_completer.sh
-export EC2_PRIVATE_KEY="$HOME/.aws/pk.pem"
-export EC2_CERT="$HOME/.aws/cert.pem"
 export AWS_CONFIG_FILE=$HOME/.aws/config
 export AWS_CREDENTIAL_FILE="$HOME/.aws/aws-credentials-master"
+export AWS_ACCESS_KEY_ID=$(grep '^AWSAccessKeyId' "$AWS_CREDENTIAL_FILE" | cut -d= -f2)
+export AWS_SECRET_ACCESS_KEY=$(grep '^AWSSecretKey'   "$AWS_CREDENTIAL_FILE" | cut -d= -f2)
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
