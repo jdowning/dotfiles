@@ -1,6 +1,7 @@
 [user]
 	name = Justin Downing
-	email = justin@apartmenttherapy.com
+	email = justin@downing.us
+	signingkey = 12DC6ADC
 [color]
 	ui = auto
 [color "branch"]
