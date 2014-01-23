@@ -4,7 +4,7 @@ call pathogen#helptags()
 
 filetype plugin indent on
 syntax on
-colorscheme Tomorrow-Night-Bright
+colorscheme jellybeans
 set shell=zsh
 
 set autoindent                                               " always set autoindenting on
