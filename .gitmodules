@@ -139,3 +139,6 @@
 [submodule ".vim/bundle/vim-fish"]
 	path = .vim/bundle/vim-fish
 	url = https://github.com/dag/vim-fish.git
+[submodule ".vim/bundle/Dockerfile"]
+	path = .vim/bundle/Dockerfile
+	url = https://github.com/ekalinin/Dockerfile.vim.git
