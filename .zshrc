@@ -53,7 +53,7 @@ RPROMPT="${FG[117]}%D{%T %Z %m-%d-%Y}%{$reset_color%}"
 
 # rbenv
 export RBENV_ROOT=/usr/local/opt/rbenv
-export PATH="/usr/local/opt/rbenv/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="/usr/local/opt/rbenv/bin:/usr/local/go/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 eval "$(rbenv init -)"
 
 # hub
