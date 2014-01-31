@@ -1,58 +1,63 @@
 [user]
-	name = Justin Downing
-	email = justin@downing.us
-	signingkey = 12DC6ADC
-[color]
-	ui = auto
-[color "branch"]
-	current = yellow black
-	local = yellow
-	remote = magenta
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red
-	new = green
-	whitespace = white reverse
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan reverse
-	branch = magenta
-[push]
-	default = simple
-[rerere]
-	enabled = true
-[alias]
-	up = pull --rebase
-	hist = log --all --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-	f = "!git ls-files | grep -i"
-	grep = grep -Ii
-	la = "!git config -l | grep alias | cut -c 7-"
-	cp = cherry-pick
-	st = status -s
-	cl = clone
-	ci = commit
-	co = checkout
-	br = branch 
-	#diff = diff --word-diff
-	dc = diff --cached
-	r = reset
-	r1 = reset HEAD^
-	r2 = reset HEAD^^
-	rh = reset --hard
-	rh1 = reset HEAD^ --hard
-	rh2 = reset HEAD^^ --hard
-	sl = stash list
-	sa = stash apply
-	ss = stash save
+  name = Justin Downing
+  email = justin@downing.us
+  signingkey = 12DC6ADC
 [credential]
-	credentialhelper = osxkeychain
+  credentialhelper = osxkeychain
 [core]
-	editor = vim
-	pager = "less -F -X"
-	filemode = true
+  editor = vim
+  pager = "less -F -X"
+  filemode = true
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  pager = true
+  status = auto
+  ui = auto
+[color "branch"]
+  current = yellow black
+  local = yellow
+  remote = magenta
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = green
+  whitespace = white reverse
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan reverse
+  branch = magenta
+[push]
+  default = simple
+[rerere]
+  enabled = true
+[alias]
+  up = pull --rebase
+  hist = log --all --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  f = "!git ls-files | grep -i"
+  grep = grep -Ii
+  la = "!git config -l | grep alias | cut -c 7-"
+  cp = cherry-pick
+  st = status -s
+  cl = clone
+  ci = commit
+  co = checkout
+  br = branch 
+  #diff = diff --word-diff
+  dc = diff --cached
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+  sl = stash list
+  sa = stash apply
+  ss = stash save
