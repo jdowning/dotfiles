@@ -71,3 +71,6 @@ autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
 " md is markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.md setlocal spell
+
+" cap is ruby
+autocmd BufRead,BufNewFile *.cap set filetype=ruby
