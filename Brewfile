@@ -49,6 +49,7 @@ install libxml2
 install libxslt
 install libyaml
 install lua
+install macvim
 install mad
 install markdown
 install mercurial
