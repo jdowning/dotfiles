@@ -18,6 +18,7 @@ set incsearch                                                " show search match
 set laststatus=2                                             " always show statusline
 set list                                                     " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
+set number                                                   " show line numbers
 set nocompatible                                             " don't bother with vi compatibility
 set pastetoggle=<F2>                                         " shortcut to toggle :set paste
 set ruler                                                    " show where you are
@@ -54,8 +55,6 @@ au VimLeave * if filereadable("[path here]/.netrwhist")|call delete("[path here]
 " you don't need to use : for commands
 nnoremap ; :
 
-nmap <F3> :NumbersToggle<CR>        " mapping f3 to NumbersToggle
-
 " Enable fancy mode 
 let g:Powerline_symbols = 'fancy'   " Powerline
 
@@ -74,3 +73,6 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 
 " cap is ruby
 autocmd BufRead,BufNewFile *.cap set filetype=ruby
+
+" sudo save
+cnoremap sudow w !sudo tee % >/dev/null
