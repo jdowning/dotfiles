@@ -1,0 +1,27 @@
+#!/bin/bash
+
+action=$1
+APPS=(
+  "Amazon Cloud Drive"
+  "Dropbox"
+  "Google Drive"
+  "OneDrive"
+)
+
+case $action in
+start)
+  for i in "${APPS[@]}"
+  do
+    osascript -e "tell application \"$i\" to activate"
+  done
+  ;;
+stop)
+  for i in "${APPS[@]}"
+  do
+    osascript -e "tell application \"$i\" to quit"
+  done
+  ;;
+*)
+  echo "Use $0 [start|stop]" && exit 1
+  ;;
+esac
