@@ -49,8 +49,19 @@ nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nmap <leader><space> :call whitespace#strip_trailing()<CR>
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+" syntastic
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_error_symbol = "★"
+let g:syntastic_style_error_symbol = ">"
+let g:syntastic_warning_symbol = "!"
+let g:syntastic_style_warning_symbol = ">"
+let g:syntastic_javascript_checkers = ["jshint"]
+
 " http://vim.1045645.n5.nabble.com/How-to-disable-netrw-to-generate-history-file-tp4248939p4256854.html
-au VimLeave * if filereadable("[path here]/.netrwhist")|call delete("[path here]/.netrwhist")|endif 
+au VimLeave * if filereadable("~/.netrwhist")|call delete("~/.netrwhist")|endif
 
 " you don't need to use : for commands
 nnoremap ; :
