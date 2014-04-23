@@ -27,7 +27,7 @@ export EDITOR=vim
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-plugins=(brew bundler gem git github osx rbenv ruby vagrant)
+plugins=(aws brew bundler gem git github osx rbenv ruby vagrant)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
@@ -50,7 +50,7 @@ RPROMPT="${FG[117]}%D{%T %Z %m-%d-%Y}%{$reset_color%}"
 
 # rbenv
 export RBENV_ROOT=/usr/local/opt/rbenv
-export PATH="/usr/local/opt/rbenv/bin:/usr/local/go/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="${HOME}/bin:/usr/local/opt/rbenv/bin:/usr/local/go/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 eval "$(rbenv init -)"
 
 # hub
