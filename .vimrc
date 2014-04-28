@@ -41,6 +41,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tsaleh/vim-tmux'
 Plugin 'tpope/vim-vividchalk'
 Plugin 'avakhov/vim-yaml'
+Plugin 'bronson/vim-trailing-whitespace'
 call vundle#end()
 
 filetype plugin indent on
@@ -106,7 +107,7 @@ au VimLeave * if filereadable("~/.netrwhist")|call delete("~/.netrwhist")|endif
 " you don't need to use : for commands
 nnoremap ; :
 
-" Enable fancy mode 
+" Enable fancy mode
 let g:Powerline_symbols = 'fancy'   " Powerline
 
 " Disable arrow keys
