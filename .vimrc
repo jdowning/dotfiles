@@ -1,8 +1,4 @@
-" pathogen
-call pathogen#infect()
-call pathogen#helptags()
-
-filetype plugin indent on
+filetype off
 syntax on
 colorscheme jellybeans
 set shell=zsh
