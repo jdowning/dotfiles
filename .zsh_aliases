@@ -4,7 +4,7 @@ function 'del_host' { gsed -i ${1}d ~/.ssh/known_hosts; }
 alias dh='dirs -v'
 alias folder-size='du -s ./* | sort -n | cut -f 2- | xargs -Ix du -sh x'
 alias pwhash='openssl passwd -1 -salt `openssl rand -base64 12`'
-alias update-vim-plugins='cd ~ && git submodule foreach git pull origin master'
+alias update-vim-plugins='vim +PluginClean! +PluginInstall! +qall'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 
 #Puppet

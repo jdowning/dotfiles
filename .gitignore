@@ -6,4 +6,5 @@
 !.zshrc
 .aws*
 .viminfo
-.vim/.*
+.vim/.netrwhist
+.vim/bundle

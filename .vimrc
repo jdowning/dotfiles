@@ -1,4 +1,49 @@
+set nocompatible
 filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'vim-scripts/Gist.vim'
+Plugin 'vim-scripts/Specky'
+Plugin 'kien/ctrlp.vim'
+Plugin 'walm/jshint.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+Plugin 'timcharper/textile.vim'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'jezcope/vim-align'
+Plugin 'tpope/vim-bundler'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-cucumber'
+Plugin 'dag/vim-fish'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-haml'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'tpope/vim-markdown'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'rodjek/vim-puppet'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-repeat'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tsaleh/vim-shoulda'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
+Plugin 'tsaleh/vim-tmux'
+Plugin 'tpope/vim-vividchalk'
+Plugin 'avakhov/vim-yaml'
+call vundle#end()
+
+filetype plugin indent on
 syntax on
 colorscheme jellybeans
 set shell=zsh
@@ -15,7 +60,6 @@ set laststatus=2                                             " always show statu
 set list                                                     " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
 set number                                                   " show line numbers
-set nocompatible                                             " don't bother with vi compatibility
 set pastetoggle=<F2>                                         " shortcut to toggle :set paste
 set ruler                                                    " show where you are
 set scrolloff=3                                              " show context above/below cursorline
