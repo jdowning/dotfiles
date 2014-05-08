@@ -1,11 +1,20 @@
 alias be='bundle exec'
-alias mvim="open -a macvim"
+alias mvim="open -a /Applications/MacVim.app"
 function 'del_host' { gsed -i ${1}d ~/.ssh/known_hosts; }
 alias dh='dirs -v'
 alias folder-size='du -s ./* | sort -n | cut -f 2- | xargs -Ix du -sh x'
 alias pwhash='openssl passwd -1 -salt `openssl rand -base64 12`'
 alias update-vim-plugins='vim +PluginClean! +PluginInstall! +qall'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+
+# InfluxDB
+function 'list-series' {
+  curl -s "localhost:8086/db/statsd/series?u=root&p=root&q=list+series" | \
+    python -mjson.tool | \
+    awk "/${1}/ {print \$2}" | \
+    sed -E 's/(\"|,)//g' | \
+    sort
+}
 
 #Puppet
 alias pd='cd ~/dev/atm/puppet'
