@@ -42,6 +42,7 @@ Plugin 'tsaleh/vim-tmux'
 Plugin 'tpope/vim-vividchalk'
 Plugin 'avakhov/vim-yaml'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'tpope/vim-endwise'
 call vundle#end()
 
 filetype plugin indent on
@@ -61,6 +62,7 @@ set laststatus=2                                             " always show statu
 set list                                                     " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
 set number                                                   " show line numbers
+set paste
 set pastetoggle=<F2>                                         " shortcut to toggle :set paste
 set ruler                                                    " show where you are
 set scrolloff=3                                              " show context above/below cursorline
