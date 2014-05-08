@@ -3,6 +3,7 @@
 action=$1
 APPS=(
   "Amazon Cloud Drive"
+  "Box Sync"
   "Dropbox"
   "Google Drive"
   "OneDrive"
