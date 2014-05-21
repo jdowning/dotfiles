@@ -3,7 +3,6 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'vim-scripts/Gist.vim'
 Plugin 'vim-scripts/Specky'
@@ -14,10 +13,7 @@ Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
-Plugin 'timcharper/textile.vim'
-Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'jezcope/vim-align'
 Plugin 'tpope/vim-bundler'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-cucumber'
@@ -32,9 +28,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'rodjek/vim-puppet'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-repeat'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'tsaleh/vim-shoulda'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
@@ -87,6 +81,7 @@ nmap <leader>a :Ack<space>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>d :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
+nmap <leader>p :Tabularize /=><CR>
 nmap <leader>t :CtrlP<CR>
 nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nmap <leader><space> :call whitespace#strip_trailing()<CR>
