@@ -2,6 +2,7 @@
 
 action=$1
 APPS=(
+  "AeroFS"
   "Amazon Cloud Drive"
   "Box Sync"
   "Dropbox"
