@@ -31,6 +31,7 @@ plugins=(aws brew bundler gem git github osx rbenv ruby vagrant)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Speed up the zsh completion
 fpath=(/usr/local/share/zsh-completions $fpath)
