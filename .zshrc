@@ -60,8 +60,9 @@ eval "$(hub alias -s)"
 
 # AWS
 source /usr/local/bin/aws_zsh_completer.sh
-export AWS_CONFIG_FILE=$HOME/.aws/config
-export AWS_CREDENTIAL_FILE="$HOME/.aws/aws-credentials-master"
-export AWS_ACCESS_KEY_ID=$(grep '^AWSAccessKeyId' "$AWS_CREDENTIAL_FILE" | cut -d= -f2)
-export AWS_SECRET_ACCESS_KEY=$(grep '^AWSSecretKey'   "$AWS_CREDENTIAL_FILE" | cut -d= -f2)
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+
+# Golang
+export GOPATH=$HOME/dev/go
+
+# Docker
+export DOCKER_HOST=tcp://localhost:4243
