@@ -17,7 +17,6 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tpope/vim-bundler'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-cucumber'
-Plugin 'dag/vim-fish'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-haml'
@@ -25,7 +24,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-markdown'
 Plugin 'Lokaltog/vim-powerline'
-Plugin 'rodjek/vim-puppet'
+Plugin 'rodjek/vim-puppet', { 'name': 'puppet' }
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'vim-ruby/vim-ruby'
@@ -33,14 +32,13 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'tsaleh/vim-tmux'
-Plugin 'tpope/vim-vividchalk'
 Plugin 'avakhov/vim-yaml'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tpope/vim-endwise'
 call vundle#end()
 
-filetype plugin indent on
 syntax on
+filetype plugin indent on
 colorscheme jellybeans
 set shell=zsh
 
