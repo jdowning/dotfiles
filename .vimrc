@@ -42,7 +42,7 @@ filetype plugin indent on
 colorscheme jellybeans
 set shell=zsh
 
-set autoindent                                               " always set autoindenting on
+set ai                                                       " always set autoindenting on
 set backspace=2                                              " Fix broken backspace in some setups
 set clipboard=unnamed                                        " yank and paste with the system clipboard
 set encoding=utf-8                                           " UTF-8
