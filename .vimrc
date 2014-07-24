@@ -43,31 +43,31 @@ filetype plugin indent on
 colorscheme jellybeans
 set shell=zsh
 
-set ai                                                       " always set autoindenting on
-set backspace=2                                              " Fix broken backspace in some setups
-set clipboard=unnamed                                        " yank and paste with the system clipboard
-set encoding=utf-8                                           " UTF-8
-set expandtab                                                " insert space characters whenever the tab key is pressed
-set hlsearch                                                 " highlight search terms
-set ignorecase                                               " ignore case when searching
-set incsearch                                                " show search matches as you type
-set laststatus=2                                             " always show statusline
-set list                                                     " show trailing whitespace
+set ai                        " always set autoindenting on
+set backspace=2               " Fix broken backspace in some setups
+set clipboard=unnamed         " yank and paste with the system clipboard
+set encoding=utf-8            " UTF-8
+set expandtab                 " insert space characters whenever the tab key is pressed
+set hlsearch                  " highlight search terms
+set ignorecase                " ignore case when searching
+set incsearch                 " show search matches as you type
+set laststatus=2              " always show statusline
+set list                      " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
-set number                                                   " show line numbers
-"set paste
-set pastetoggle=<F2>                                         " shortcut to toggle :set paste
-set ruler                                                    " show where you are
-set scrolloff=3                                              " show context above/below cursorline
-set shiftround                                               " use multiple of shiftwidth when indenting with '<' and '>'
-set shiftwidth=2                                             " number of spaces to use for autoindenting
+set modelines=2               " check first two lines for modeline
+set number                    " show line numbers
+set pastetoggle=<F2>          " shortcut to toggle :set paste
+set ruler                     " show where you are
+set scrolloff=3               " show context above/below cursorline
+set shiftround                " use multiple of shiftwidth when indenting with '<' and '>'
+set shiftwidth=2              " number of spaces to use for autoindenting
 set showcmd
-set smartcase                                                " case-sensitive search if any caps
-set softtabstop=2                                            " insert mode tab and backspace use 2 spaces
-set showmatch                                                " set show matching parenthesis
-set smartcase                                                " ignore case if search pattern is all lowercase, case-sensitive otherwise
-set tabstop=4                                                " a tab is four spaces
-set title                                                    " change the terminal's title
+set smartcase                 " case-sensitive search if any caps
+set softtabstop=2             " insert mode tab and backspace use 2 spaces
+set showmatch                 " set show matching parenthesis
+set smartcase                 " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set tabstop=4                 " a tab is four spaces
+set title                     " change the terminal's title
 
 " keyboard shortcuts
 let mapleader = ","
