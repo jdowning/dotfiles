@@ -1,8 +1,7 @@
-#!/bin/bash
+#!/bin/bash -e
 
 action=$1
 APPS=(
-  "AeroFS"
   "Amazon Cloud Drive"
   "Box Sync"
   "Dropbox"
@@ -11,19 +10,13 @@ APPS=(
 )
 
 case $action in
-start)
-  for i in "${APPS[@]}"
-  do
-    osascript -e "tell application \"$i\" to activate"
-  done
-  ;;
-stop)
-  for i in "${APPS[@]}"
-  do
-    osascript -e "tell application \"$i\" to quit"
-  done
-  ;;
-*)
-  echo "Use $0 [start|stop]" && exit 1
-  ;;
+  start)
+    for i in "${APPS[@]}" ; do osascript -e "tell application \"$i\" to activate" ; done
+    ;;
+  stop)
+    for i in "${APPS[@]}" ; do osascript -e "tell application \"$i\" to quit" ; done
+    ;;
+  *)
+    echo "Use $0 [start|stop]" && exit 1
+    ;;
 esac
