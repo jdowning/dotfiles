@@ -34,6 +34,10 @@
   default = simple
 [rerere]
   enabled = true
+[grep]
+  fullname = true
+[tag]
+  sort = version:refname
 [alias]
   up = "!git remote update -p; git merge --ff-only @{u}"
   hist = log --all --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
