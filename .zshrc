@@ -59,10 +59,10 @@ export FPATH=$FPATH:/usr/local/share/zsh/site-functions
 eval "$(hub alias -s)"
 
 # AWS
-source /usr/local/bin/aws_zsh_completer.sh
+source /usr/local/share/zsh/site-functions/_aws
 
 # Golang
 export GOPATH=$HOME/dev/go
 
 # Docker
-export DOCKER_HOST=tcp://localhost:4243
+#export DOCKER_HOST=tcp://`boot2docker -m 123 ssh ip addr show eth1 |sed -ne 's/^[ \t]*inet[ \t]*\([0-9.]*\)\/.*$/\1/p'`:2375

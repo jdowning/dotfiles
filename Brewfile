@@ -7,6 +7,7 @@ install aircrack-ng
 install apple-gcc42
 install asciidoc
 install autoconf
+install awscli
 install bison
 install boost
 install class-dump
