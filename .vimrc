@@ -124,3 +124,6 @@ autocmd BufRead,BufNewFile *.cap set filetype=ruby
 
 " sudo save
 cnoremap sudow w !sudo tee % >/dev/null
+
+" Go
+iab errnn if err != nil {<CR>return err<CR>}
