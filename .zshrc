@@ -54,9 +54,8 @@ export RBENV_ROOT=/usr/local/opt/rbenv
 export PATH="${HOME}/bin:/usr/local/opt/rbenv/bin:/usr/local/go/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 eval "$(rbenv init -)"
 
-# hub
-export FPATH=$FPATH:/usr/local/share/zsh/site-functions
-eval "$(hub alias -s)"
+# gh cli
+eval "$(gh alias -s)"
 
 # AWS
 source /usr/local/share/zsh/site-functions/_aws

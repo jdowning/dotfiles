@@ -24,6 +24,7 @@ install fping
 install freetype
 install gdbm
 install gettext
+install gh
 install gist
 install git
 install gmp
@@ -32,7 +33,6 @@ install gnu-sed
 install gnupg
 install gnupg2
 install gpg-agent
-install hub
 install jq
 install lame
 install libassuan
