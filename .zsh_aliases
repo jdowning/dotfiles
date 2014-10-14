@@ -10,6 +10,7 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 alias b2d='boot2docker'
 alias clear-dns='sudo killall -HUP mDNSResponder'
 function 'update-git-repos' { for i in `ls` ; do cd $i ; git up ; cd - ; done }
+alias fix-cam='sudo killall VDCAssistant'
 
 # InfluxDB
 function 'list-series' {
