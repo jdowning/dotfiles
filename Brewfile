@@ -41,6 +41,7 @@ install gnu-getopt
 install gnu-sed
 install gnupg
 install gnupg2
+install go
 install gpg-agent
 install graphicsmagick
 install hr

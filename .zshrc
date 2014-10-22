@@ -7,9 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="muse"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR=vim
 
 # Set to this to use case-sensitive completion
@@ -51,7 +48,7 @@ RPROMPT="${FG[117]}%D{%T %Z %m-%d-%Y}%{$reset_color%}"
 
 # rbenv
 export RBENV_ROOT=/usr/local/opt/rbenv
-export PATH="${HOME}/bin:/usr/local/opt/rbenv/bin:/usr/local/go/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="${HOME}/bin:${RBENV_ROOT}/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 eval "$(rbenv init -)"
 
 # gh cli
@@ -62,6 +59,10 @@ source /usr/local/share/zsh/site-functions/_aws
 
 # Golang
 export GOPATH=$HOME/dev/go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 # Docker
 #export DOCKER_HOST=tcp://`boot2docker -m 123 ssh ip addr show eth1 |sed -ne 's/^[ \t]*inet[ \t]*\([0-9.]*\)\/.*$/\1/p'`:2375
+
+# NodeJS
+export PATH=$PATH:/usr/local/share/npm/bin

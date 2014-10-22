@@ -36,6 +36,7 @@ Plugin 'tsaleh/vim-tmux'
 Plugin 'avakhov/vim-yaml'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tpope/vim-endwise'
+Plugin 'fatih/vim-go'
 call vundle#end()
 
 syntax on
