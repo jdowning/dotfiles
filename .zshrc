@@ -51,6 +51,9 @@ export RBENV_ROOT=/usr/local/opt/rbenv
 export PATH="${HOME}/bin:${RBENV_ROOT}/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 eval "$(rbenv init -)"
 
+# postgresql
+export PATH=/usr/local/opt/postgresql92/bin:$PATH
+
 # gh cli
 eval "$(gh alias -s)"
 
@@ -62,7 +65,10 @@ export GOPATH=$HOME/dev/go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 # Docker
-#export DOCKER_HOST=tcp://`boot2docker -m 123 ssh ip addr show eth1 |sed -ne 's/^[ \t]*inet[ \t]*\([0-9.]*\)\/.*$/\1/p'`:2375
+$(boot2docker shellinit)
 
 # NodeJS
 export PATH=$PATH:/usr/local/share/npm/bin
+
+# Z
+. `brew --prefix`/etc/profile.d/z.sh
