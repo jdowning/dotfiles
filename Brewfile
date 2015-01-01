@@ -120,6 +120,7 @@ install wget
 install xmlto
 install xz
 install yajl
+install z
 install zsh-completions
 install zsh-syntax-highlighting
 
@@ -145,6 +146,7 @@ cask install induction
 cask install integrity
 cask install jumpcut
 cask install keka
+cask install lingo
 cask install lingon-x
 cask install quicklook-json
 cask install skype
@@ -153,7 +155,9 @@ cask install slate
 cask install spotify
 cask install transmission
 cask install tunnelblick
+cask install twitter
 cask install vagrant
+cask install vagrant-manager
 cask install virtualbox
 cask install vlc
 
