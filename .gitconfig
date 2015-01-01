@@ -55,7 +55,7 @@
   cl = clone
   ci = commit
   co = checkout
-  br = branch 
+  br = branch
   #diff = diff --word-diff
   dc = diff --cached
   r = reset
@@ -68,5 +68,8 @@
   sa = stash apply
   ss = stash save
 [filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
+  clean = git media clean %f
+  smudge = git media smudge %f
+  required = true
+[branch]
+  autosetupmerge = always
