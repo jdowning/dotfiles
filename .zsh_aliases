@@ -25,6 +25,11 @@ function 'list-series' {
 alias pd='cd ~/dev/atm/puppet'
 alias puppet='nocorrect puppet'
 
+#tmux
+alias tml="tmux list-sessions"
+alias tma="tmux -2 attach -t $1"
+alias tmk="tmux kill-session -t $1"
+
 #Vagrant
 alias vagrant='nocorrect vagrant'
 alias v='nocorrect vagrant'
