@@ -1,3 +1,5 @@
+# while read i ; do brew $i ; done < Brewfile
+
 update
 
 tap homebrew/binary
@@ -161,5 +163,4 @@ cask install vagrant-manager
 cask install virtualbox
 cask install vlc
 
-# run doctor to make sure everything is a-ok
 doctor
