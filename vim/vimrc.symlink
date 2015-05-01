@@ -37,6 +37,9 @@ Plugin 'avakhov/vim-yaml'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tpope/vim-endwise'
 Plugin 'fatih/vim-go'
+Plugin 'saltstack/salt-vim'
+Plugin 'bkad/vim-terraform'
+Plugin 'lepture/vim-jinja'
 call vundle#end()
 
 syntax on

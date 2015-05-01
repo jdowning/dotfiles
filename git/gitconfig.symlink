@@ -1,13 +1,13 @@
 [user]
   name = Justin Downing
   email = justin@downing.us
-  signingkey = 12DC6ADC
 [credential]
-  credentialhelper = osxkeychain
+  helper = /opt/boxen/bin/boxen-git-credential
 [core]
   editor = vim
   pager = "less -F -X"
   filemode = true
+  excludesfile = ~/.gitignore
 [color]
   branch = auto
   diff = auto
@@ -30,6 +30,8 @@
   changed = green
   untracked = cyan reverse
   branch = magenta
+[hub]
+  protocol = git
 [push]
   default = simple
 [rerere]
@@ -56,7 +58,7 @@
   ci = commit
   co = checkout
   br = branch
-  #diff = diff --word-diff
+  diff = diff --patience
   dc = diff --cached
   r = reset
   r1 = reset HEAD^

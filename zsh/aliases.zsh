@@ -43,3 +43,6 @@ alias erb_check_all="for i in *.erb; do echo -n \"\033[1;32m\$i:\033[0m \" && er
 #DNS
 alias dns-normal='sudo networksetup -setdnsservers Wi-Fi 192.168.5.1'
 alias dns-google='sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4'
+
+#Terraform
+alias tf='terraform'
