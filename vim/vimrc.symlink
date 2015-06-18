@@ -8,7 +8,6 @@ Plugin 'vim-scripts/Gist.vim'
 Plugin 'vim-scripts/Specky'
 Plugin 'kien/ctrlp.vim'
 Plugin 'walm/jshint.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
@@ -85,8 +84,7 @@ nnoremap <Leader>x :x<CR>
 map <leader>l :Align
 nmap <leader>a :Ack<space>
 nmap <leader>b :CtrlPBuffer<CR>
-nmap <leader>d :NERDTreeToggle<CR>
-nmap <leader>f :NERDTreeFind<CR>
+nmap <leader>f :Explore<CR>
 nmap <leader>p :Tabularize /=>/l1<CR>
 nmap <leader>t :CtrlP<CR>
 nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
@@ -103,6 +101,10 @@ function! s:Repl()
   return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
+
+" netrw
+let g:netrw_browsex_viewer = "osx-open-fixed"
+let g:netrw_liststyle=3
 
 " syntastic
 let g:syntastic_check_on_open = 0
