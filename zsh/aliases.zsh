@@ -1,6 +1,6 @@
 alias g='git'
 alias be='bundle exec'
-alias mvim="open -a /Applications/MacVim.app"
+alias vi='vim'
 function 'del_host' { gsed -i ${1}d ~/.ssh/known_hosts; }
 alias dh='dirs -v'
 alias folder-size='du -s ./* | sort -n | cut -f 2- | xargs -Ix du -sh x'
