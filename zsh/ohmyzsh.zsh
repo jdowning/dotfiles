@@ -5,6 +5,6 @@ ZSH_THEME="muse"
 
 export EDITOR=vim
 
-plugins=(aws brew bundler gem git osx ruby vagrant)
+plugins=(aws brew bundler gem git osx ruby terraform vagrant)
 
 source $ZSH/oh-my-zsh.sh

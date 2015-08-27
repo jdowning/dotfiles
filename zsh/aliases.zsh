@@ -8,7 +8,6 @@ function 'pwhash' { openssl rand -base64 12 }
 alias update-vim-plugins='vim +PluginClean! +PluginInstall! +qall'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 alias b2d='boot2docker'
-alias clear-dns='sudo killall -HUP mDNSResponder'
 function 'update-git-repos' { for i in `find . -type d -maxdepth 1` ; do echo "\e[0;36mUpdating $i ...\e[0m" ; cd $i ; git up -q ; cd - ; done }
 alias fix-cam='sudo killall VDCAssistant'
 
@@ -59,3 +58,22 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+#OSX flush_dns
+case "$(sw_vers -productVersion)" in
+10.5.*|10.6.*)
+  alias flush_dns="sudo dscacheutil -flushcache"
+  ;;
+10.8.*|10.7.*)
+  alias flush_dns="sudo killall -HUP mDNSResponder"
+  ;;
+10.9.*)
+  alias flush_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+  ;;
+10.10.[123])
+  alias flush_dns="sudo discoveryutil udnsflushcaches"
+  ;;
+10.10.*)
+  alias flush_dns="sudo killall -HUP mDNSResponder"
+  ;;
+esac
