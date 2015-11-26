@@ -1,8 +1,6 @@
 [user]
   name = Justin Downing
   email = justin@downing.us
-[credential]
-  helper = /opt/boxen/bin/boxen-git-credential
 [core]
   editor = vim
   pager = "less -F -X"

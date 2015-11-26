@@ -1,15 +1,16 @@
 alias g='git'
 alias be='bundle exec'
 alias vi='vim'
-function 'del_host' { gsed -i ${1}d ~/.ssh/known_hosts; }
 alias dh='dirs -v'
 alias folder-size='du -s ./* | sort -n | cut -f 2- | xargs -Ix du -sh x'
-function 'pwhash' { openssl rand -base64 12 }
 alias update-vim-plugins='vim +PluginClean! +PluginInstall! +qall'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
-alias b2d='boot2docker'
-function 'update-git-repos' { for i in `find . -type d -maxdepth 1` ; do echo "\e[0;36mUpdating $i ...\e[0m" ; cd $i ; git up -q ; cd - ; done }
 alias fix-cam='sudo killall VDCAssistant'
+alias dm='docker-machine'
+
+function 'del_host' { gsed -i ${1}d ~/.ssh/known_hosts; }
+function 'pwhash' { openssl rand -base64 12 }
+function 'update-git-repos' { for i in `find . -type d -maxdepth 1` ; do echo "\e[0;36mUpdating $i ...\e[0m" ; cd $i ; git up -q ; cd - ; done }
 
 # InfluxDB
 function 'list-series' {

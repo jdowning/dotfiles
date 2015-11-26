@@ -3,42 +3,61 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'vim-scripts/Gist.vim'
-Plugin 'vim-scripts/Specky'
-Plugin 'kien/ctrlp.vim'
-Plugin 'walm/jshint.vim'
-Plugin 'evanmiller/nginx-vim-syntax'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic'
-Plugin 'godlygeek/tabular'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
+
+Plugin 'bling/vim-airline'
+Plugin 'editorconfig/editorconfig-vim'
+
+" Tim Pope Awesomeness
 Plugin 'tpope/vim-bundler'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-haml'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-markdown'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'rodjek/vim-puppet', { 'name': 'puppet' }
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-rbenv'
 Plugin 'tpope/vim-surround'
-Plugin 'tsaleh/vim-tmux'
+
+" Formatting
 Plugin 'avakhov/vim-yaml'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'tpope/vim-endwise'
-Plugin 'fatih/vim-go'
-Plugin 'saltstack/salt-vim'
 Plugin 'bkad/vim-terraform'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'elzr/vim-json'
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'fatih/vim-go'
+Plugin 'fatih/vim-hclfmt'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'pangloss/vim-javascript'
+Plugin 'rodjek/vim-puppet', { 'name': 'puppet' }
+Plugin 'saltstack/salt-vim'
+Plugin 'walm/jshint.vim'
+
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'ervandew/supertab'
+Plugin 'garbas/vim-snipmate'
+Plugin 'godlygeek/tabular'
+Plugin 'honza/vim-snippets'
+Plugin 'kien/ctrlp.vim'
 Plugin 'lepture/vim-jinja'
+Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tlib_vim'
+Plugin 'tsaleh/vim-tmux'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/Gist.vim'
+Plugin 'vim-scripts/Specky'
+
+ " Themes
+Plugin 'Lokaltog/vim-distinguished'
+Plugin 'alem0lars/vim-colorscheme-darcula'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'fatih/molokai'
+Plugin 'nanotech/jellybeans.vim.git'
+Plugin 'sjl/badwolf'
+Plugin 'tpope/vim-vividchalk'
 call vundle#end()
 
 syntax on
@@ -64,13 +83,14 @@ set ruler                     " show where you are
 set scrolloff=3               " show context above/below cursorline
 set shiftround                " use multiple of shiftwidth when indenting with '<' and '>'
 set shiftwidth=2              " number of spaces to use for autoindenting
-set showcmd
+set showcmd                   " show command in bottom bar
 set smartcase                 " case-sensitive search if any caps
 set softtabstop=2             " insert mode tab and backspace use 2 spaces
 set showmatch                 " set show matching parenthesis
 set smartcase                 " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set tabstop=4                 " a tab is four spaces
 set title                     " change the terminal's title
+set wildmenu                  " visual autocomplete for command menu
 
 " keyboard shortcuts
 let mapleader = "\<Space>"
@@ -123,9 +143,6 @@ au VimLeave * if filereadable("~/.netrwhist")|call delete("~/.netrwhist")|endif
 " you don't need to use : for commands
 nnoremap ; :
 
-" Enable fancy mode
-let g:Powerline_symbols = 'fancy'   " Powerline
-
 " Disable arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -147,3 +164,6 @@ cnoremap sudow w !sudo tee % >/dev/null
 
 " Go
 iab errnn if err != nil {<CR>return err<CR>}
+
+" spellcheck git commit
+autocmd FileType gitcommit setlocal spell
