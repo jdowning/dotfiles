@@ -1,6 +1,7 @@
 [user]
   name = Justin Downing
   email = justin@downing.us
+  signingkey = 599583E8
 [core]
   editor = vim
   pager = "less -F -X"
@@ -31,16 +32,21 @@
 [hub]
   protocol = git
 [push]
-  default = simple
+  default = current
 [rerere]
   enabled = true
 [grep]
   fullname = true
+  extendedRegexp = true
 [tag]
   sort = version:refname
+[diff]
+  compactionHeuristic = true
 [alias]
+  pf = push --force-with-lease
   pr = pull-request
   up = "!git remote update -p; git merge --ff-only @{u}"
+  prune-local = "!git branch --merged master | grep -Ev '^master$' | xargs git branch -d"
   hist = log --all --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
@@ -56,7 +62,6 @@
   ci = commit
   co = checkout
   br = branch
-  diff = diff --patience
   dc = diff --cached
   r = reset
   r1 = reset HEAD^
@@ -73,3 +78,13 @@
   required = true
 [branch]
   autosetupmerge = always
+[credential]
+  helper = /opt/boxen/bin/boxen-git-credential
+[commit]
+  gpgsign = true
+[pager]
+  log = diff-highlight | less -F -X
+  show = diff-highlight | less -F -X
+  diff = diff-highlight | less -F -X
+[interactive]
+  diffFilter = diff-highlight
