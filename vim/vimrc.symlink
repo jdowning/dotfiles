@@ -33,6 +33,10 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'rodjek/vim-puppet', { 'name': 'puppet' }
 Plugin 'saltstack/salt-vim'
 Plugin 'walm/jshint.vim'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'cespare/vim-toml'
+Plugin 'nathanielc/vim-tickscript'
+Plugin 'pearofducks/ansible-vim'
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'bronson/vim-trailing-whitespace'
@@ -40,7 +44,7 @@ Plugin 'ervandew/supertab'
 Plugin 'garbas/vim-snipmate'
 Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'lepture/vim-jinja'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tlib_vim'
@@ -155,6 +159,7 @@ autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
 " md is markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.md setlocal spell
+let vim_markdown_preview_github=1
 
 " cap is ruby
 autocmd BufRead,BufNewFile *.cap set filetype=ruby
