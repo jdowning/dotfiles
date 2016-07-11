@@ -18,6 +18,7 @@ antigen bundles <<BUNDLES
   zsh-users/zsh-completions
   zsh-users/zsh-syntax-highlighting
   rupa/z
+  horosgrisa/autoenv
 BUNDLES
 
 antigen theme muse

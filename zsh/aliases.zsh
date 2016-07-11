@@ -5,8 +5,10 @@ alias dh='dirs -v'
 alias folder-size='du -s ./* | sort -n | cut -f 2- | xargs -Ix du -sh x'
 alias update-vim-plugins='vim +PluginClean! +PluginInstall! +qall'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+alias fix-audio='sudo killall coreaudiod'
 alias fix-cam='sudo killall VDCAssistant'
 alias dm='docker-machine'
+alias update-node-definitions='node /opt/boxen/node-build/tools/scraper.js'
 
 function 'del_host' { gsed -i ${1}d ~/.ssh/known_hosts; }
 function 'pwhash' { openssl rand -base64 12 }
