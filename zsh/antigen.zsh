@@ -1,4 +1,4 @@
-source `brew --prefix`/share/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 
 antigen bundle --loc=lib
 #antigen bundle robbyrussell/oh-my-zsh lib/
