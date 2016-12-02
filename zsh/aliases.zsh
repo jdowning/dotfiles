@@ -1,4 +1,5 @@
 alias g='git'
+alias git='hub'
 alias be='bundle exec'
 alias vi='vim'
 alias dh='dirs -v'
