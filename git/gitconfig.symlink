@@ -1,7 +1,7 @@
 [user]
   name = Justin Downing
-  email = justin@downing.us
-  signingkey = 599583E8
+  email = jdowning@heroku.com
+#  signingkey = 599583E8
 [core]
   editor = vim
   pager = "less -F -X"
@@ -54,13 +54,13 @@
   ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
   f = "!git ls-files | grep -i"
-  grep = grep -Ii
   la = "!git config -l | grep alias | cut -c 7-"
   cp = cherry-pick
   st = status -s
   cl = clone
   ci = commit
   co = checkout
+  commend = "commit --amend --no-edit"
   br = branch
   dc = diff --cached
   r = reset
@@ -72,16 +72,15 @@
   sl = stash list
   sa = stash apply
   ss = stash save
+  pfh = push --force heroku HEAD:master
 [filter "media"]
   clean = git media clean %f
   smudge = git media smudge %f
   required = true
 [branch]
   autosetupmerge = always
-[credential]
-  helper = /opt/boxen/bin/boxen-git-credential
-[commit]
-  gpgsign = true
+#[commit]
+#  gpgsign = true
 [pager]
   log = diff-highlight | less -F -X
   show = diff-highlight | less -F -X
