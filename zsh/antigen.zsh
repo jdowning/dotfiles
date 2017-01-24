@@ -1,12 +1,10 @@
 source `brew --prefix`/share/antigen.zsh
 
 antigen bundle --loc=lib
-#antigen bundle robbyrussell/oh-my-zsh lib/
 
 antigen bundles <<BUNDLES
   aws
   brew
-  brew-cask
   bundler
   docker
   gem

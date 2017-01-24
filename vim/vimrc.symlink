@@ -1,9 +1,10 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
 
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'editorconfig/editorconfig-vim'
 
@@ -37,36 +38,41 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'cespare/vim-toml'
 Plugin 'nathanielc/vim-tickscript'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'mustache/vim-mustache-handlebars'
 
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'ervandew/supertab'
-Plugin 'garbas/vim-snipmate'
-Plugin 'godlygeek/tabular'
-Plugin 'honza/vim-snippets'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'lepture/vim-jinja'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'bronson/vim-trailing-whitespace'
+"Plugin 'ervandew/supertab'
+"Plugin 'garbas/vim-snipmate'
+"Plugin 'godlygeek/tabular'
+"Plugin 'honza/vim-snippets'
+"Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'lepture/vim-jinja'
 Plugin 'scrooloose/syntastic'
-Plugin 'tomtom/tlib_vim'
-Plugin 'tsaleh/vim-tmux'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'tsaleh/vim-tmux'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/Gist.vim'
-Plugin 'vim-scripts/Specky'
+"Plugin 'vim-scripts/Gist.vim'
+"Plugin 'vim-scripts/Specky'
 
  " Themes
-Plugin 'Lokaltog/vim-distinguished'
-Plugin 'alem0lars/vim-colorscheme-darcula'
+"Plugin 'Lokaltog/vim-distinguished'
+"Plugin 'alem0lars/vim-colorscheme-darcula'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Plugin 'fatih/molokai'
+"Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+"Plugin 'fatih/molokai'
 Plugin 'nanotech/jellybeans.vim.git'
-Plugin 'sjl/badwolf'
-Plugin 'tpope/vim-vividchalk'
+"Plugin 'sjl/badwolf'
+"Plugin 'tpope/vim-vividchalk'
+
 call vundle#end()
 
 syntax on
 filetype plugin indent on
-colorscheme jellybeans
+set background=dark
+colorscheme solarized
+"colorscheme jellybeans
 set shell=zsh
 
 set ai                        " always set autoindenting on
@@ -131,15 +137,16 @@ let g:netrw_browsex_viewer = "osx-open-fixed"
 let g:netrw_liststyle=3
 
 " syntastic
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_error_symbol = "★"
 let g:syntastic_style_error_symbol = ">"
 let g:syntastic_warning_symbol = "!"
-let g:syntastic_style_warning_symbol = ">"
-let g:syntastic_javascript_checkers = ["jshint"]
+let g:syntastic_style_warning_symbol = "⚠️"
+let g:syntastic_ruby_rubocop_exec = "/Users/justin/.rbenv/shims/rubocop"
+let g:syntastic_javascript_checkers = ['standard']
 
 " http://vim.1045645.n5.nabble.com/How-to-disable-netrw-to-generate-history-file-tp4248939p4256854.html
 au VimLeave * if filereadable("~/.netrwhist")|call delete("~/.netrwhist")|endif
@@ -172,3 +179,40 @@ iab errnn if err != nil {<CR>return err<CR>}
 
 " spellcheck git commit
 autocmd FileType gitcommit setlocal spell
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" Run a given vim command on the results of fuzzy selecting from a given shell
+" command. See usage below.
+function! SelectaCommand(choice_command, selecta_args, vim_command)
+  try
+    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+  catch /Vim:Interrupt/
+    " Swallow the ^C so that the redraw below happens; otherwise there will be
+    " leftovers from selecta on the screen
+    redraw!
+    return
+  endtry
+  redraw!
+  exec a:vim_command . " " . selection
+endfunction
+
+" Find all files in all non-dot directories starting in the working directory.
+" Fuzzy select one of those. Open the selected file with :e.
+nnoremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
+
+" Remap the tab key to do autocompletion or indentation depending on the
+" context (from http://www.vim.org/tips/tip.php?tip_id=102)
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
