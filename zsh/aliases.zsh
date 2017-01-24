@@ -49,6 +49,12 @@ alias dns-google='sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4'
 #Terraform
 alias tf='terraform'
 
+#Hub
+alias git='hub'
+
+#Heroku
+alias h='heroku'
+
 #fancy-ctrl-z
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
