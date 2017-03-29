@@ -65,14 +65,14 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'nanotech/jellybeans.vim.git'
 "Plugin 'sjl/badwolf'
 "Plugin 'tpope/vim-vividchalk'
+Plugin 'raphamorim/lucario'
 
 call vundle#end()
 
 syntax on
 filetype plugin indent on
 set background=dark
-colorscheme solarized
-"colorscheme jellybeans
+colorscheme lucario
 set shell=zsh
 
 set ai                        " always set autoindenting on
