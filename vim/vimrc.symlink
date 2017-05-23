@@ -72,7 +72,7 @@ call vundle#end()
 syntax on
 filetype plugin indent on
 set background=dark
-colorscheme lucario
+colorscheme jellybeans
 set shell=zsh
 
 set ai                        " always set autoindenting on
