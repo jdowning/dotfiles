@@ -19,6 +19,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-rbenv'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-surround'
 
 " Formatting
