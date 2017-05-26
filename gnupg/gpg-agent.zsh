@@ -1,6 +1,3 @@
-if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-    source ~/.gnupg/.gpg-agent-info
-    export GPG_AGENT_INFO
-else
-    eval $(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf --write-env-file ~/.gnupg/.gpg-agent-info)
+if [ -f ~/.gnupg/gpg-agent.conf ] ; then
+  eval $(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf)
 fi
