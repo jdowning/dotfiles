@@ -1,1 +1,2 @@
-export PATH="/usr/local/opt/node@6/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
