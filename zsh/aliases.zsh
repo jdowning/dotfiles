@@ -1,6 +1,8 @@
 alias g='git'
 alias git='hub'
 alias be='bundle exec'
+alias bi='bundle install'
+alias biq='bundle install --quiet'
 alias vi='vim'
 alias dh='dirs -v'
 alias folder-size='du -s ./* | sort -n | cut -f 2- | xargs -Ix du -sh x'
@@ -10,6 +12,7 @@ alias fix-audio='sudo killall coreaudiod'
 alias fix-cam='sudo killall VDCAssistant'
 alias dm='docker-machine'
 alias update-node-definitions='node /opt/boxen/node-build/tools/scraper.js'
+alias utc='date -u | pbcopy'
 
 function 'del_host' { gsed -i ${1}d ~/.ssh/known_hosts; }
 function 'pwhash' { openssl rand -base64 12 }
