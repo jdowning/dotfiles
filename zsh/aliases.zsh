@@ -59,6 +59,9 @@ alias git='hub'
 #Heroku
 alias h='heroku'
 
+# SSH
+alias ssh="osascript -e 'if application \"yubiswitch\" is running then tell application \"yubiswitch\" to KeyOn' && ssh"
+
 #fancy-ctrl-z
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
