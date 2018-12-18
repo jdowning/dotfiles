@@ -57,8 +57,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'vim-ruby/vim-ruby'
 "Plugin 'vim-scripts/Gist.vim'
 "Plugin 'vim-scripts/Specky'
+Plugin 'AndrewRadev/splitjoin.vim'
 
- " Themes
+" Themes
 "Plugin 'Lokaltog/vim-distinguished'
 "Plugin 'alem0lars/vim-colorscheme-darcula'
 Plugin 'altercation/vim-colors-solarized'
@@ -68,13 +69,14 @@ Plugin 'nanotech/jellybeans.vim.git'
 "Plugin 'sjl/badwolf'
 "Plugin 'tpope/vim-vividchalk'
 Plugin 'raphamorim/lucario'
+Plugin 'rking/vim-detailed'
 
 call vundle#end()
 
 syntax on
 filetype plugin indent on
 set background=dark
-colorscheme jellybeans
+colorscheme lucario
 set shell=zsh
 
 set ai                        " always set autoindenting on
@@ -170,7 +172,7 @@ noremap <Right> <NOP>
 autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
 
 " md is markdown
-autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.md setlocal filetype=markdown textwidth=80
 autocmd BufRead,BufNewFile *.md setlocal spell
 let vim_markdown_preview_github=1
 
