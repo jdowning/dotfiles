@@ -42,6 +42,7 @@ Plugin 'nathanielc/vim-tickscript'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'HerringtonDarkholme/yats.vim'
 
 "Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'bronson/vim-trailing-whitespace'
