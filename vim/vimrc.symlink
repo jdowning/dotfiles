@@ -90,7 +90,7 @@ set hlsearch                  " highlight search terms
 set ignorecase                " ignore case when searching
 set incsearch                 " show search matches as you type
 set laststatus=2              " always show statusline
-set list                      " show trailing whitespace
+"set list                      " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
 set modelines=2               " check first two lines for modeline
 set number                    " show line numbers
@@ -184,6 +184,7 @@ autocmd BufRead,BufNewFile *.cap set filetype=ruby
 cnoremap sudow w !sudo tee % >/dev/null
 
 " Go
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab softtabstop=4 tabstop=4 shiftwidth=4
 iab errnn if err != nil {<CR>return err<CR>}
 
 " spellcheck git commit
