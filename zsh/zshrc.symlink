@@ -1,5 +1,8 @@
 export DF=$HOME/.dotfiles
 export EDITOR=vim
+if [[ -d $HOME/Dropbox ]]; then
+  export HISTFILE=$HOME/Dropbox/macos/dotfiles/.zsh_history
+fi
 
 unalias run-help
 autoload run-help
