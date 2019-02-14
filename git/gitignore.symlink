@@ -38,5 +38,5 @@ Thumbs.db
 
 # Vim #
 #######
-*.swp
+*.sw*
 .nyc_output
