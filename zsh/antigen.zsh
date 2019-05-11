@@ -9,7 +9,6 @@ antigen bundles <<BUNDLES
   docker
   gem
   git
-  osx
   ruby
   terraform
   vagrant
