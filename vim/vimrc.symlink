@@ -24,7 +24,6 @@ Plugin 'tpope/vim-surround'
 
 " Formatting
 Plugin 'avakhov/vim-yaml'
-Plugin 'bkad/vim-terraform'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
@@ -43,12 +42,14 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'farmergreg/vim-lastplace'
+Plugin 'hashivim/vim-terraform'
+Plugin 'hashivim/vim-vaultproject'
 
 "Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'bronson/vim-trailing-whitespace'
 "Plugin 'ervandew/supertab'
 "Plugin 'garbas/vim-snipmate'
-"Plugin 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 "Plugin 'honza/vim-snippets'
 "Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'lepture/vim-jinja'
@@ -176,6 +177,7 @@ autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
 autocmd BufRead,BufNewFile *.md setlocal filetype=markdown textwidth=80
 autocmd BufRead,BufNewFile *.md setlocal spell
 let vim_markdown_preview_github=1
+let vim_markdown_preview_browser='Google Chrome'
 
 " cap is ruby
 autocmd BufRead,BufNewFile *.cap set filetype=ruby
@@ -195,6 +197,10 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+" terraform
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
