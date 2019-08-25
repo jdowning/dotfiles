@@ -9,18 +9,13 @@ Plugin 'bling/vim-airline'
 Plugin 'editorconfig/editorconfig-vim'
 
 " Tim Pope Awesomeness
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-rbenv'
 Plugin 'tpope/vim-rhubarb'
-Plugin 'tpope/vim-surround'
 
 " Formatting
 Plugin 'avakhov/vim-yaml'
@@ -44,6 +39,7 @@ Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'farmergreg/vim-lastplace'
 Plugin 'hashivim/vim-terraform'
 Plugin 'hashivim/vim-vaultproject'
+Plugin 'vim-ruby/vim-ruby'
 
 "Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'bronson/vim-trailing-whitespace'
@@ -53,10 +49,9 @@ Plugin 'godlygeek/tabular'
 "Plugin 'honza/vim-snippets'
 "Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'lepture/vim-jinja'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 "Plugin 'tomtom/tlib_vim'
 "Plugin 'tsaleh/vim-tmux'
-Plugin 'vim-ruby/vim-ruby'
 "Plugin 'vim-scripts/Gist.vim'
 "Plugin 'vim-scripts/Specky'
 Plugin 'AndrewRadev/splitjoin.vim'
@@ -64,14 +59,14 @@ Plugin 'AndrewRadev/splitjoin.vim'
 " Themes
 "Plugin 'Lokaltog/vim-distinguished'
 "Plugin 'alem0lars/vim-colorscheme-darcula'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 "Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 "Plugin 'fatih/molokai'
-Plugin 'nanotech/jellybeans.vim.git'
+"Plugin 'nanotech/jellybeans.vim.git'
 "Plugin 'sjl/badwolf'
 "Plugin 'tpope/vim-vividchalk'
 Plugin 'raphamorim/lucario'
-Plugin 'rking/vim-detailed'
+"Plugin 'rking/vim-detailed'
 
 call vundle#end()
 
@@ -144,10 +139,11 @@ let g:netrw_browsex_viewer = "osx-open-fixed"
 let g:netrw_liststyle=3
 
 " syntastic
-let g:syntastic_check_on_open = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
-let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_error_symbol = "★"
 let g:syntastic_style_error_symbol = ">"
 let g:syntastic_warning_symbol = "!"
@@ -201,6 +197,14 @@ map <Leader>a :call RunAllSpecs()<CR>
 " terraform
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+
+" Dispatch
+map <Leader>d :Dispatch<CR>
+autocmd FileType go let b:dispatch = 'go test'
+autocmd FileType sh let b:dispatch = 'make'
+autocmd FileType make let b:dispatch = 'make'
+autocmd BufEnter *_spec.rb let b:dispatch = 'bundle exec rspec --format progress %'
+autocmd BufEnter Gemfile let b:dispatch = 'bundle'
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
