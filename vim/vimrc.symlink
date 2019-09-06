@@ -33,7 +33,7 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'cespare/vim-toml'
 Plugin 'nathanielc/vim-tickscript'
 Plugin 'pearofducks/ansible-vim'
-Plugin 'thoughtbot/vim-rspec'
+Plugin 'janko/vim-test'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'farmergreg/vim-lastplace'
@@ -188,11 +188,13 @@ iab errnn if err != nil {<CR>return err<CR>}
 " spellcheck git commit
 autocmd FileType gitcommit setlocal spell
 
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" vim-test
+map <Leader>t :TestFile<CR>
+map <Leader>s :TestNearest<CR>
+map <Leader>l :TestLast<CR>
+map <Leader>a :TestSuite<CR>
+map <Leacer>v :TestVisit<CR>
+" let test#strategy = "dispatch"
 
 " terraform
 let g:terraform_align=1
