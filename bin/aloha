@@ -65,7 +65,7 @@ status() {
 }
 
 ip() {
-  curl -s https://ifconfig.co
+  curl -4 -s https://ifconfig.co
 }
 
 case $command in

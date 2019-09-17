@@ -47,7 +47,6 @@ Plugin 'vim-ruby/vim-ruby'
 "Plugin 'garbas/vim-snipmate'
 Plugin 'godlygeek/tabular'
 "Plugin 'honza/vim-snippets'
-"Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'lepture/vim-jinja'
 Plugin 'vim-syntastic/syntastic'
 "Plugin 'tomtom/tlib_vim'
@@ -110,18 +109,15 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>x :x<CR>
-map <leader>l :Align
-nmap <leader>a :Ack<space>
-nmap <leader>b :CtrlPBuffer<CR>
-nmap <leader>f :Explore<CR>
-nmap <leader>p :Tabularize /=>/l1<CR>
-nmap <leader>t :CtrlP<CR>
-nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>x :x<CR>
 nmap <leader><space> :call whitespace#strip_trailing()<CR>
-map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+" Tabularize
+map <leader>p :Tabularize /=>/l1<CR>
+map <leader>e :Tabularize /=<CR>
+map <leader>c :Tabularize /:\zs<CR>
 
 " vp doesn't replace paste buffer
 function! RestoreRegister()
@@ -189,11 +185,11 @@ iab errnn if err != nil {<CR>return err<CR>}
 autocmd FileType gitcommit setlocal spell
 
 " vim-test
-map <Leader>t :TestFile<CR>
-map <Leader>s :TestNearest<CR>
-map <Leader>l :TestLast<CR>
-map <Leader>a :TestSuite<CR>
-map <Leacer>v :TestVisit<CR>
+map <leader>t :TestFile<CR>
+map <leader>s :TestNearest<CR>
+map <leader>l :TestLast<CR>
+map <leader>a :TestSuite<CR>
+map <leader>v :TestVisit<CR>
 " let test#strategy = "dispatch"
 
 " terraform
@@ -201,7 +197,7 @@ let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
 " Dispatch
-map <Leader>d :Dispatch<CR>
+map <leader>d :Dispatch<CR>
 autocmd FileType go let b:dispatch = 'go test'
 autocmd FileType sh let b:dispatch = 'make'
 autocmd FileType make let b:dispatch = 'make'
