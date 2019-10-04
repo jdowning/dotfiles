@@ -5,13 +5,13 @@ region="${2:-aloha-east}"
 username="$(whoami)"
 
 usage() {
-  echo -e "Usage: alhoa command [vpn-region]"
+  echo -e "Usage: alhoa COMMAND"
   echo ""
   echo -e "Commands:"
-  echo -e "  connect    - establish new vpn connection"
-  echo -e "  disconnect - disconnect active vpn connection"
-  echo -e "  status     - view vpn connection status"
-  echo -e "  ip         - get current public ip address"
+  echo -e "  connect [vpn-region] - establish new vpn connection"
+  echo -e "  disconnect           - disconnect active vpn connection"
+  echo -e "  status               - view vpn connection status"
+  echo -e "  ip                   - get current public ip address"
   echo ""
   exit 1
 }
@@ -35,7 +35,7 @@ connect() {
     echo -e "✅ Connected"
   else
     echo -e "❌ Failed"
-    echo $res
+    echo -e $res
   fi
 }
 
