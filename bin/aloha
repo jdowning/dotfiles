@@ -45,7 +45,7 @@ disconnect() {
     echo -e "👋 Successfully disconnected"
   else
     echo -e "❌ Failed"
-    echo $res
+    echo -e $res
   fi
 }
 
