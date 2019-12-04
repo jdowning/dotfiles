@@ -5,7 +5,7 @@ region="${2:-aloha-east}"
 username="$(whoami)"
 
 usage() {
-  echo -e "Usage: alhoa COMMAND"
+  echo -e "Usage: aloha COMMAND"
   echo ""
   echo -e "Commands:"
   echo -e "  connect [vpn-region] - establish new vpn connection"
