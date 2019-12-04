@@ -12,6 +12,7 @@ usage() {
   echo -e "  disconnect           - disconnect active vpn connection"
   echo -e "  status               - view vpn connection status"
   echo -e "  ip                   - get current public ip address"
+  echo -e "  web                  - opens aloha web login"
   echo ""
   exit 1
 }
