@@ -68,8 +68,12 @@ ip() {
   curl -4 -s https://ifconfig.co
 }
 
+web() {
+  open "https://aloha.my.salesforce.com"
+}
+
 case $command in
-  connect|disconnect|status|ip)
+  connect|disconnect|status|ip|web)
     $command
     ;;
   *)
