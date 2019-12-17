@@ -1,7 +1,8 @@
 #!/bin/bash
+set -eu
 
 command="$1"
-region="${2:-aloha-east}"
+region="${2:-AMER EAST}"
 username="$(whoami)"
 
 usage() {
@@ -11,6 +12,7 @@ usage() {
   echo -e "  connect [vpn-region] - establish new vpn connection"
   echo -e "  disconnect           - disconnect active vpn connection"
   echo -e "  status               - view vpn connection status"
+  echo -e "  regions              - show available regions"
   echo -e "  ip                   - get current public ip address"
   echo -e "  web                  - opens aloha web login"
   echo ""
@@ -19,7 +21,7 @@ usage() {
 
 connect() {
   password="" # password from cmdline
-  code="" # 2fa code
+  code=""     # 2fa code
   
   read -sp 'VPN Password: ' password
   osascript -e 'if application "yubiswitch" is running then tell application "yubiswitch" to KeyOn'
@@ -28,8 +30,8 @@ connect() {
   osascript -e 'if application "yubiswitch" is running then tell application "yubiswitch" to KeyOff'
   
   echo
-  echo -e "☎️  Connecting to ${region}..."
-  res=$(echo -e "${username}\n${password}/otp\n${code}\ny\n" | /opt/cisco/anyconnect/bin/vpn -s connect ${region} 2>&1)
+  echo -e "☎️  Connecting to ${region} ..."
+  res=$(echo -e "${username}\n${password}/otp\n${code}\ny\n" | /opt/cisco/anyconnect/bin/vpn -s connect "${region}" 2>&1)
   check=$(echo ${res} | tail -n 5 | grep -c "Connected")
   
   if [ "$check" == "1" ]; then
@@ -65,6 +67,10 @@ status() {
   esac
 }
 
+regions() {
+  /opt/cisco/anyconnect/bin/vpn hosts | awk '/>/ {$1=""; print}' | sed 's/^ //'
+}
+
 ip() {
   curl -4 -s https://ifconfig.co
 }
@@ -74,7 +80,7 @@ web() {
 }
 
 case $command in
-  connect|disconnect|status|ip|web)
+  connect|disconnect|status|regions|ip|web)
     $command
     ;;
   *)
