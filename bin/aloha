@@ -72,7 +72,7 @@ regions() {
 }
 
 ip() {
-  curl -4 -s https://ifconfig.co
+  curl -4 --silent https://ifconfig.co/json | jq --raw-output .ip,.city,.country | tr '\n' ' '
 }
 
 web() {

@@ -62,6 +62,17 @@ alias h='heroku'
 # SSH
 alias ssh="osascript -e 'if application \"yubiswitch\" is running then tell application \"yubiswitch\" to KeyOn' && ssh"
 
+# AWS
+function set_aws_env() {
+  local profile=${1:-default}
+  export AWS_ACCESS_KEY_ID=`grep -A3 ${profile} ~/.aws/credentials | awk '/aws_access_key_id/ {print $3}'`
+  export AWS_SECRET_ACCESS_KEY=`grep -A3 ${profile} ~/.aws/credentials | awk '/aws_secret_access_key/ {print $3}'`
+}
+
+function unset_aws_env() {
+  unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
+}
+
 #fancy-ctrl-z
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
@@ -93,3 +104,8 @@ case "$(sw_vers -productVersion)" in
   alias flush_dns="sudo killall -HUP mDNSResponder"
   ;;
 esac
+
+# get my AWS Account ID
+function my-aws-account-id() {
+  aws --profile=${1:-default} sts get-caller-identity --output text --query 'Account'
+}

@@ -11,7 +11,6 @@ antigen bundles <<BUNDLES
   git
   ruby
   terraform
-  vagrant
   zsh-users/zsh-completions
   zsh-users/zsh-syntax-highlighting
   rupa/z
