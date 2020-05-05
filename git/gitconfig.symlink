@@ -41,6 +41,7 @@
 [tag]
   sort = version:refname
 [diff]
+  noprefix = true
   compactionHeuristic = true
 [alias]
   pf = push --force-with-lease
@@ -64,6 +65,10 @@
   commend = "commit --amend --no-edit"
   br = branch
   dc = diff --cached
+  find = "!git branch | cut -c 3- | selecta | xargs git checkout"
+  nb = switch --create
+  new = "!git init && git commit --allow-empty --message 'Initial commit'"
+  pfh = push --force heroku HEAD:master
   r = reset
   r1 = reset HEAD^
   r2 = reset HEAD^^
@@ -73,8 +78,7 @@
   sl = stash list
   sa = stash apply
   ss = stash save
-  pfh = push --force heroku HEAD:master
-  find = "!git branch | cut -c 3- | selecta | xargs git checkout"
+  sw = switch
 [filter "media"]
   clean = git media clean %f
   smudge = git media smudge %f
