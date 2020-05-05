@@ -2,7 +2,7 @@
 set -eu
 
 command="$1"
-region="${2:-AMER EAST}"
+region="${2:-AmerEast-1}"
 username="$(whoami)"
 
 usage() {
@@ -23,32 +23,31 @@ connect() {
   password="" # password from cmdline
   code=""     # 2fa code
   
-  read -sp 'VPN Password: ' password
+  read -rsp 'VPN Password: ' password
   osascript -e 'if application "yubiswitch" is running then tell application "yubiswitch" to KeyOn'
   echo
-  read -n 8 -sp '2fa: ' code
+  read -rn 8 -sp '2fa: ' code
   osascript -e 'if application "yubiswitch" is running then tell application "yubiswitch" to KeyOff'
   
   echo
   echo -e "☎️  Connecting to ${region} ..."
   res=$(echo -e "${username}\n${password}/otp\n${code}\ny\n" | /opt/cisco/anyconnect/bin/vpn -s connect "${region}" 2>&1)
-  check=$(echo ${res} | tail -n 5 | grep -c "Connected")
+  check=$(echo "${res}" | tail -n 5 | grep -c "Connected")
   
   if [ "$check" == "1" ]; then
     echo -e "✅ Connected"
   else
     echo -e "❌ Failed"
-    echo -e $res
+    echo -e "${res}"
   fi
 }
 
 disconnect() {
-  res=$(/opt/cisco/anyconnect/bin/vpn disconnect)
-  if [ $? -eq 0 ]; then 
+  if /opt/cisco/anyconnect/bin/vpn disconnect &>/tmp/vpn-disconnect ; then
     echo -e "👋 Successfully disconnected"
   else
     echo -e "❌ Failed"
-    echo -e $res
+    cat /tmp/vpn-disconnect
   fi
 }
 
@@ -82,6 +81,12 @@ web() {
 case $command in
   connect|disconnect|status|regions|ip|web)
     $command
+    ;;
+  up)
+    connect
+    ;;
+  down)
+    disconnect
     ;;
   *)
     usage
