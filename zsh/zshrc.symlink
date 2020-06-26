@@ -53,12 +53,3 @@ unset config_files
 DIRSTACKSIZE=8
 setopt autopushd pushdminus pushdsilent pushdtohome
 unsetopt nomatch
-
-# color clock on the right
-RPROMPT="${FG[117]}%D{%T %Z %m-%d-%Y}%{$reset_color%}"
-
-# added by travis gem
-[ -f /Users/justin/.travis/travis.sh ] && source /Users/justin/.travis/travis.sh
-
-# added by travis gem
-[ -f /Users/jdowning/.travis/travis.sh ] && source /Users/jdowning/.travis/travis.sh

@@ -17,6 +17,6 @@ antigen bundles <<BUNDLES
   horosgrisa/autoenv
 BUNDLES
 
-antigen theme muse
+antigen theme miloshadzic
 
 antigen apply
