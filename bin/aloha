@@ -1,9 +1,5 @@
 #!/bin/bash
-set -eu
-
-command="$1"
-region="${2:-AmerEast-1}"
-username="$(whoami)"
+set -e
 
 usage() {
   echo -e "Usage: aloha COMMAND"
@@ -78,9 +74,17 @@ web() {
   open "https://aloha.my.salesforce.com"
 }
 
-case $command in
+if [[ -z "$1" ]]; then
+  usage
+fi
+
+subcommand="$1"
+region="${2:-AmerEast-1}"
+username="$(whoami)"
+
+case $subcommand in
   connect|disconnect|status|regions|ip|web)
-    $command
+    $subcommand
     ;;
   up)
     connect

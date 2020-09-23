@@ -53,3 +53,9 @@ unset config_files
 DIRSTACKSIZE=8
 setopt autopushd pushdminus pushdsilent pushdtohome
 unsetopt nomatch
+
+# added by Snowflake SnowCD installer
+export PATH=/opt/snowflake/snowcd:$PATH
+
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH

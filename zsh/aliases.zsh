@@ -109,3 +109,5 @@ esac
 function my-aws-account-id() {
   aws --profile=${1:-default} sts get-caller-identity --output text --query 'Account'
 }
+
+alias rcc="git diff --name-only master | rg .+rb | xargs bundle exec rubocop"

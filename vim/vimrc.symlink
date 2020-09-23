@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'editorconfig/editorconfig-vim'
 
 " Tim Pope Awesomeness
@@ -41,38 +41,25 @@ Plugin 'hashivim/vim-terraform'
 Plugin 'hashivim/vim-vaultproject'
 Plugin 'vim-ruby/vim-ruby'
 
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'bronson/vim-trailing-whitespace'
-"Plugin 'ervandew/supertab'
-"Plugin 'garbas/vim-snipmate'
 Plugin 'godlygeek/tabular'
-"Plugin 'honza/vim-snippets'
-"Plugin 'lepture/vim-jinja'
 Plugin 'vim-syntastic/syntastic'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'tsaleh/vim-tmux'
-"Plugin 'vim-scripts/Gist.vim'
-"Plugin 'vim-scripts/Specky'
 Plugin 'AndrewRadev/splitjoin.vim'
 
 " Themes
-"Plugin 'Lokaltog/vim-distinguished'
-"Plugin 'alem0lars/vim-colorscheme-darcula'
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-"Plugin 'fatih/molokai'
 "Plugin 'nanotech/jellybeans.vim.git'
 "Plugin 'sjl/badwolf'
 "Plugin 'tpope/vim-vividchalk'
 Plugin 'raphamorim/lucario'
 "Plugin 'rking/vim-detailed'
+Plugin 'jacoborus/tender.vim'
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 
 call vundle#end()
 
 syntax on
 filetype plugin indent on
 set background=dark
-colorscheme lucario
+colorscheme tender
 set shell=zsh
 
 set ai                        " always set autoindenting on
@@ -113,6 +100,7 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>x :x<CR>
 nmap <leader><space> :call whitespace#strip_trailing()<CR>
+map <leader>rn :set rnu!<CR>
 
 " Tabularize
 map <leader>p :Tabularize /=>/l1<CR>
