@@ -54,11 +54,8 @@ DIRSTACKSIZE=8
 setopt autopushd pushdminus pushdsilent pushdtohome
 unsetopt nomatch
 
-# color clock on the right
-RPROMPT="${FG[117]}%D{%T %Z %m-%d-%Y}%{$reset_color%}"
+# added by Snowflake SnowCD installer
+export PATH=/opt/snowflake/snowcd:$PATH
 
-# added by travis gem
-[ -f /Users/justin/.travis/travis.sh ] && source /Users/justin/.travis/travis.sh
-
-# added by travis gem
-[ -f /Users/jdowning/.travis/travis.sh ] && source /Users/jdowning/.travis/travis.sh
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
