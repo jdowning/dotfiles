@@ -32,7 +32,7 @@
 [hub]
   protocol = git
 [push]
-  default = current
+	default = current
 [rerere]
   enabled = true
 [grep]
@@ -41,14 +41,13 @@
 [tag]
   sort = version:refname
 [diff]
-  noprefix = true
   compactionHeuristic = true
 [alias]
   pf = push --force-with-lease
   pr = pull-request
   up = "!git remote update origin --prune; git merge --ff-only @{u}"
-  prune-local = "!git branch --merged master | grep -Ev '^master$' | xargs git branch -d"
-  prune-squash = "!git for-each-ref refs/heads/ '--format=%(refname:short)' | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done"
+  prune-local = "!git branch --merged main | grep -Ev '^main$' | xargs git branch -d"
+  prune-squash = "!git for-each-ref refs/heads/ '--format=%(refname:short)' | while read branch; do mergeBase=$(git merge-base main $branch) && [[ $(git cherry main $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done"
   hist = log --all --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
@@ -60,7 +59,7 @@
   cp = cherry-pick
   st = status -s
   cl = clone
-  ci = commit
+  c = commit
   co = checkout
   commend = "commit --amend --no-edit"
   br = branch
@@ -68,7 +67,7 @@
   find = "!git branch | cut -c 3- | selecta | xargs git checkout"
   nb = switch --create
   new = "!git init && git commit --allow-empty --message 'Initial commit'"
-  pfh = push --force heroku HEAD:master
+  pfh = push --force heroku HEAD:main
   r = reset
   r1 = reset HEAD^
   r2 = reset HEAD^^
@@ -85,11 +84,11 @@
   required = true
 [branch]
   autosetupmerge = always
-[commit]
-  gpgsign = true
 [pager]
   log = diff-highlight | less -F -X
   show = diff-highlight | less -F -X
   diff = diff-highlight | less -F -X
 [interactive]
   diffFilter = diff-highlight
+[init]
+  defaultBranch = main

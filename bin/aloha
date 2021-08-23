@@ -16,6 +16,11 @@ usage() {
 }
 
 connect() {
+  if [ "$(/opt/cisco/anyconnect/bin/vpn state | awk '/state/ {print $4}' | head -n 1)" == "Connected" ]; then
+    echo -e "✅ Connected"
+    exit 0
+  fi
+
   password="" # password from cmdline
   code=""     # 2fa code
   
@@ -67,7 +72,7 @@ regions() {
 }
 
 ip() {
-  curl -4 --silent https://ifconfig.co/json | jq --raw-output .ip,.city,.country | tr '\n' ' '
+  curl -4 --silent http://ip-api.com/json | jq '{ip: .query,city,region,country,org}'
 }
 
 web() {
@@ -79,7 +84,7 @@ if [[ -z "$1" ]]; then
 fi
 
 subcommand="$1"
-region="${2:-AmerEast-1}"
+region="${2:-AmerWest-1}"
 username="$(whoami)"
 
 case $subcommand in

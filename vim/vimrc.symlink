@@ -9,6 +9,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'editorconfig/editorconfig-vim'
 
 " Tim Pope Awesomeness
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
@@ -44,6 +45,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'wsdjeg/vim-fetch'
 
 " Themes
 "Plugin 'nanotech/jellybeans.vim.git'
@@ -102,10 +104,17 @@ nnoremap <leader>x :x<CR>
 nmap <leader><space> :call whitespace#strip_trailing()<CR>
 map <leader>rn :set rnu!<CR>
 
+" line highlight
+highlight LineHighlight ctermbg=darkgray guibg=darkgray
+" highlight the current line
+nnoremap <leader>h :call matchadd('LineHighlight', '\%'.line('.').'l')<CR>
+" clear all the highlighted lines
+nnoremap <leader>c :call clearmatches()<CR>
+
 " Tabularize
 map <leader>p :Tabularize /=>/l1<CR>
 map <leader>e :Tabularize /=<CR>
-map <leader>c :Tabularize /:\zs<CR>
+map <leader>: :Tabularize /:\zs<CR>
 
 " vp doesn't replace paste buffer
 function! RestoreRegister()
@@ -158,6 +167,7 @@ autocmd BufRead,BufNewFile *.md setlocal filetype=markdown textwidth=80
 autocmd BufRead,BufNewFile *.md setlocal spell
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Google Chrome'
+let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim', 'bash', 'javascript', 'js=javascript', 'json=javascript']
 
 " cap is ruby
 autocmd BufRead,BufNewFile *.cap set filetype=ruby
