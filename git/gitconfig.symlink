@@ -2,6 +2,8 @@
   name = Justin Downing
   email = justin@downing.us
   signingkey = 599583E8
+[includeIf "gitdir:~/dev/heroku/"]
+  path = ~/dev/heroku/.gitconfig
 [core]
   editor = vim
   pager = "less -F -X"
