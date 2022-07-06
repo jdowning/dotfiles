@@ -159,28 +159,25 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-" fdoc is yaml
-autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
+augroup Highlighting
+  autocmd!
+  autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
+  autocmd BufNewFile,BufRead *.go setlocal noexpandtab softtabstop=4 tabstop=4 shiftwidth=4
+  autocmd BufRead,BufNewFile *.md setlocal filetype=markdown textwidth=80
+  autocmd BufRead,BufNewFile *.md setlocal spell
+  autocmd FileType gitcommit setlocal spell
+augroup END
 
 " md is markdown
-autocmd BufRead,BufNewFile *.md setlocal filetype=markdown textwidth=80
-autocmd BufRead,BufNewFile *.md setlocal spell
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Google Chrome'
 let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim', 'bash', 'javascript', 'js=javascript', 'json=javascript']
-
-" cap is ruby
-autocmd BufRead,BufNewFile *.cap set filetype=ruby
 
 " sudo save
 cnoremap sudow w !sudo tee % >/dev/null
 
 " Go
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab softtabstop=4 tabstop=4 shiftwidth=4
 iab errnn if err != nil {<CR>return err<CR>}
-
-" spellcheck git commit
-autocmd FileType gitcommit setlocal spell
 
 " vim-test
 map <leader>t :TestFile<CR>
@@ -196,11 +193,14 @@ let g:terraform_fmt_on_save=1
 
 " Dispatch
 map <leader>d :Dispatch<CR>
-autocmd FileType go let b:dispatch = 'go test'
-autocmd FileType sh let b:dispatch = 'make'
-autocmd FileType make let b:dispatch = 'make'
-autocmd BufEnter *_spec.rb let b:dispatch = 'bundle exec rspec --format progress %'
-autocmd BufEnter Gemfile let b:dispatch = 'bundle'
+augroup Dispatch
+  autocmd!
+  autocmd FileType go let b:dispatch = 'go test'
+  autocmd FileType sh let b:dispatch = 'make'
+  autocmd FileType make let b:dispatch = 'make'
+  autocmd BufEnter *_spec.rb let b:dispatch = 'bundle exec rspec --format progress %'
+  autocmd BufEnter Gemfile let b:dispatch = 'bundle'
+augroup END
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.

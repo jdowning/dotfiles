@@ -67,7 +67,7 @@
   br = branch
   dc = diff --cached
   find = "!git branch | cut -c 3- | selecta | xargs git checkout"
-  nb = switch --create
+  nb = "!git switch --create $1 && git push origin -u"
   new = "!git init && git commit --allow-empty --message 'Initial commit'"
   pfh = push --force heroku HEAD:main
   r = reset
