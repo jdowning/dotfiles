@@ -35,6 +35,7 @@
   protocol = git
 [push]
 	default = current
+	autoSetupRemote = true
 [rerere]
   enabled = true
 [grep]
