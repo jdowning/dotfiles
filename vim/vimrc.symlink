@@ -72,9 +72,9 @@ set encoding=utf-8            " UTF-8
 set expandtab                 " insert space characters whenever the tab key is pressed
 set hlsearch                  " highlight search terms
 set ignorecase                " ignore case when searching
+set smartcase                 " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set incsearch                 " show search matches as you type
 set laststatus=2              " always show statusline
-"set list                      " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
 set modelines=2               " check first two lines for modeline
 set number                    " show line numbers
@@ -84,10 +84,8 @@ set scrolloff=3               " show context above/below cursorline
 set shiftround                " use multiple of shiftwidth when indenting with '<' and '>'
 set shiftwidth=2              " number of spaces to use for autoindenting
 set showcmd                   " show command in bottom bar
-set smartcase                 " case-sensitive search if any caps
 set softtabstop=2             " insert mode tab and backspace use 2 spaces
 set showmatch                 " set show matching parenthesis
-set smartcase                 " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set tabstop=4                 " a tab is four spaces
 set title                     " change the terminal's title
 set wildmenu                  " visual autocomplete for command menu
@@ -159,28 +157,25 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-" fdoc is yaml
-autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
+augroup Highlighting
+  autocmd!
+  autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
+  autocmd BufNewFile,BufRead *.go setlocal noexpandtab softtabstop=4 tabstop=4 shiftwidth=4
+  autocmd BufRead,BufNewFile *.md setlocal filetype=markdown textwidth=80
+  autocmd BufRead,BufNewFile *.md setlocal spell
+  autocmd FileType gitcommit setlocal spell
+augroup END
 
 " md is markdown
-autocmd BufRead,BufNewFile *.md setlocal filetype=markdown textwidth=80
-autocmd BufRead,BufNewFile *.md setlocal spell
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Google Chrome'
 let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim', 'bash', 'javascript', 'js=javascript', 'json=javascript']
-
-" cap is ruby
-autocmd BufRead,BufNewFile *.cap set filetype=ruby
 
 " sudo save
 cnoremap sudow w !sudo tee % >/dev/null
 
 " Go
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab softtabstop=4 tabstop=4 shiftwidth=4
 iab errnn if err != nil {<CR>return err<CR>}
-
-" spellcheck git commit
-autocmd FileType gitcommit setlocal spell
 
 " vim-test
 map <leader>t :TestFile<CR>
@@ -196,11 +191,14 @@ let g:terraform_fmt_on_save=1
 
 " Dispatch
 map <leader>d :Dispatch<CR>
-autocmd FileType go let b:dispatch = 'go test'
-autocmd FileType sh let b:dispatch = 'make'
-autocmd FileType make let b:dispatch = 'make'
-autocmd BufEnter *_spec.rb let b:dispatch = 'bundle exec rspec --format progress %'
-autocmd BufEnter Gemfile let b:dispatch = 'bundle'
+augroup Dispatch
+  autocmd!
+  autocmd FileType go let b:dispatch = 'go test'
+  autocmd FileType sh let b:dispatch = 'make'
+  autocmd FileType make let b:dispatch = 'make'
+  autocmd BufEnter *_spec.rb let b:dispatch = 'bundle exec rspec --format progress %'
+  autocmd BufEnter Gemfile let b:dispatch = 'bundle'
+augroup END
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.

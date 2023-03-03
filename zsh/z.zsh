@@ -1,1 +1,2 @@
-source `brew --prefix`/etc/profile.d/z.sh
+z4h source -- ${HOMEBREW_PREFIX:+$HOMEBREW_PREFIX/etc/profile.d/z.sh}
+
