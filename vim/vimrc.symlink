@@ -233,7 +233,8 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Run a given vim command on the results of alt from a given path.
 function! AltCommand(path, vim_command)
-  let l:alternate = system("alt " . a:path)
+  " https://github.com/uptech/alt/blob/8ddf809e62e48031f5eb6e3a7090818771b1cbdc/README.md?plain=1#L16-L19
+  let l:alternate = system("alt --truncate 1 --path-weight 5 " . a:path)
   if empty(l:alternate)
     echo "No alternate file for " . a:path . " exists!"
   else
