@@ -41,6 +41,7 @@ Plugin 'farmergreg/vim-lastplace'
 Plugin 'hashivim/vim-terraform'
 Plugin 'hashivim/vim-vaultproject'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'keith/rspec.vim'
 
 Plugin 'godlygeek/tabular'
 Plugin 'vim-syntastic/syntastic'

@@ -46,19 +46,6 @@ function unset_aws_env() {
   unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
 }
 
-#fancy-ctrl-z
-fancy-ctrl-z () {
-  if [[ $#BUFFER -eq 0 ]]; then
-    BUFFER="fg"
-    zle accept-line
-  else
-    zle push-input
-    zle clear-screen
-  fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
-
 # get my AWS Account ID
 function my-aws-account-id() {
   aws --profile=${1:-default} sts get-caller-identity --output text --query 'Account'

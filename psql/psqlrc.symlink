@@ -1,4 +1,29 @@
 \set QUIET 1
+-- aurora from https://gist.github.com/ardentperf/52bd418e44b1be26d7b63af21331cece
+select case when count(*)=0 then 'select ''not-aurora'' as avers'
+                            else 'select aurora_version() as avers'
+       end as aurora_version_query
+from pg_settings where name='rds.extensions' and setting like '%aurora_stat_utils%' \gset
+prepare detect_aurora as :aurora_version_query;
+execute detect_aurora \gset
+deallocate detect_aurora;
+with
+  pgvers as (
+    select current_setting('server_version') as v
+  ), allvers as (
+    select 1 priority, 'aurora-'||v||'-'||:'avers' as version from pgvers
+    where :'avers' <> 'not-aurora'
+      union all
+    select 2, 'rds-'||v from pgvers, pg_settings s
+    where s.name like 'rds.%'
+      union all
+    select 3, 'pg-'||v from pgvers
+  )
+select first_value(version) over (order by priority) as server_version
+from allvers limit 1 \gset
+select case when pg_is_in_recovery() then 'ro' else 'rw' end as standby_mode \gset
+-- \set PROMPT1 '%[%033[1m%]%:server_version: %:standby_mode: %n@%/%R%[%033[0m%]%# '
+
 -- formatting
 \x auto
 
@@ -30,3 +55,9 @@
 \set COMP_KEYWORD_CASE upper
 
 \set whoami 'SELECT current_user;'
+
+-- load a lot of data 100GB
+\set megaload 'CREATE UNLOGGED TABLE IF NOT EXISTS stuff (x text); ALTER TABLE stuff ALTER x SET STORAGE plain ; INSERT INTO stuff SELECT repeat(\'a\',4100) FROM generate_series(1,13107200);'
+
+-- one gig
+\set onegig 'CREATE TABLE IF NOT EXISTS large_test (num1 bigint, num2 double precision, num3 double precision); INSERT INTO large_test (num1, num2, num3) SELECT round(random()*10), random(), random()*142 FROM generate_series(1, 20000000) s(i);'
