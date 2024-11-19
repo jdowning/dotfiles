@@ -1,214 +1,80 @@
-adns
-adwaita-icon-theme
-antigen
-aom
-asdf
-atk
-autoconf
-automake
-awscli
-bdw-gc
-berkeley-db
-boost
-brotli
-c-ares
-ca-certificates
-cairo
-circleci
-coreutils
-crystal
-ctags
-curl
-dep
-double-conversion
-dpkg
-fb303
-fbthrift
-fizz
-fmt
-folly
-fontconfig
-fortune
-freetype
-fribidi
-fzf
-gcc
-gd
-gdbm
-gdk-pixbuf
-gettext
-gflags
-giflib
-gist
-git
-git-secrets
-glib
-glog
-gmp
-gnu-sed
-gnu-tar
-gnupg
-gnutls
-go
-gobject-introspection
-gpatch
-graphite2
-graphviz
-grip
-grpcurl
-gsettings-desktop-schemas
-gtk+3
-gts
-guile
-hadolint
-harfbuzz
-hey
-hicolor-icon-theme
-hub
-icu4c
-imath
-isl
-jasper
-jemalloc
-jo
-jpeg
-jpeg-xl
-jq
-json-c
-krb5
-lastpass-cli
-libassuan
-libavif
-libcbor
-libcroco
-libepoxy
-libev
-libevent
-libffi
-libfido2
-libgcrypt
-libgpg-error
-libidn2
-libksba
-libmetalink
-libmpc
-libnghttp2
-libpng
-libpthread-stubs
-librsvg
-libslirp
-libsodium
-libssh
-libssh2
-libtasn1
-libtiff
-libtool
-libunistring
-libusb
-libuv
-libvmaf
-libx11
-libxau
-libxcb
-libxdmcp
-libxext
-libxrender
-libyaml
-libyubikey
-llvm
-llvm@11
-llvm@9
-lua
-luajit-openresty
-lz4
-lzo
-m4
-mdcat
-mpdecimal
-mpfr
-mysql-client
-ncurses
-netpbm
-nettle
-nghttp2
-node
-npth
-numpy
-oniguruma
-openblas
-openexr
-openjdk
-openldap
-openssl@1.1
-p11-kit
-pango
-pcre
-pcre2
-perl
-pgbadger
-pinentry
-pixman
-pkg-config
-po4a
-postgresql@13
-pth
-py2cairo
-py3cairo
-pygobject3
-python@2
-python@3.10
-python@3.8
-python@3.9
-qemu
-rbenv
-rbenv-ctags
-rbenv-default-gems
-readline
-redis
-ripgrep
-rtmpdump
-ruby
-ruby-build
-rust
-selecta
-shellcheck
-six
-snappy
-sqlite
-swig
-tcl-tk
-telnet
-terraform
-tflint
-tmux
-tree
-unbound
-unixodbc
-utf8proc
-util-linux
-vde
-vim
-wangle
-watchman
-webp
-wget
-xdot
-xorgproto
-xz
-yarn
-ykpers
-youtube-dl
-z
-zsh
-zstd
-heroku/brew/heroku
-heroku/brew/heroku-node
-niobos/ministat/ministat
-starkandwayne/cf/eden
-uptech/oss/alt
-font-fira-code
-jumpcut
-kitty
-session-manager-plugin
-snowflake-snowsql
-vlc
+# taps
+tap "heroku/brew"
+tap "homebrew/bundle"
+tap "homebrew/command-not-found"
+tap "homebrew/services"
+tap "mongodb/brew"
+tap "uptech/oss"
+
+# packages
+brew "agg"
+brew "angle-grinder"
+brew "awscli"
+brew "icu4c@76"
+brew "cmake"
+brew "curl"
+brew "direnv"
+brew "dpkg"
+brew "libsodium"
+brew "folly"
+brew "fizz"
+brew "wangle"
+brew "fbthrift"
+brew "fb303"
+brew "edencommon"
+brew "ffmpeg"
+brew "fzf"
+brew "gawk"
+brew "gh"
+brew "gifsicle"
+brew "git"
+brew "git-delta"
+brew "git-secrets"
+brew "gnu-sed"
+brew "gnupg"
+brew "go"
+brew "golang-migrate"
+brew "grip"
+brew "gum"
+brew "hadolint"
+brew "hub"
+brew "jemalloc"
+brew "jo"
+brew "jq"
+brew "mise"
+brew "node"
+brew "mvfst"
+brew "nmap"
+brew "openjdk"
+brew "php"
+brew "pinentry-mac"
+brew "pipx"
+brew "pkgconf"
+brew "postgresql@16", restart_service: true
+brew "pyenv"
+brew "python-setuptools"
+brew "rabbitmq", restart_service: true
+brew "ruby-build"
+brew "redis", restart_service: true
+brew "ripgrep"
+brew "selecta"
+brew "shellcheck"
+brew "telnet"
+brew "terraform"
+brew "tmux"
+brew "tree"
+brew "util-linux"
+brew "vim"
+brew "watchman"
+brew "wget"
+brew "yarn"
+brew "z"
+brew "zsh"
+brew "heroku/brew/heroku"
+brew "mongodb/brew/mongodb-community"
+brew "uptech/oss/alt"
+
+# casks
+cask "session-manager-plugin"
+cask "sfdx"
+cask "swiftbar"
