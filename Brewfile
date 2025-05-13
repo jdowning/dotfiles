@@ -1,9 +1,6 @@
 # taps
 tap "heroku/brew"
-tap "homebrew/bundle"
 tap "homebrew/command-not-found"
-tap "homebrew/services"
-tap "mongodb/brew"
 tap "uptech/oss"
 
 # packages
@@ -53,8 +50,6 @@ brew "pkgconf"
 brew "postgresql@16", restart_service: true
 brew "pyenv"
 brew "python-setuptools"
-brew "rabbitmq", restart_service: true
-brew "ruby-build"
 brew "redis", restart_service: true
 brew "ripgrep"
 brew "selecta"
@@ -75,6 +70,6 @@ brew "mongodb/brew/mongodb-community"
 brew "uptech/oss/alt"
 
 # casks
+cask "font-meslo-lg-nerd-font"
 cask "session-manager-plugin"
-cask "sfdx"
 cask "swiftbar"
