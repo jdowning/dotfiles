@@ -1,4 +1,5 @@
 [tools]
+ruby = "latest"
 terraform = "latest"
 usage = "latest"
 
