@@ -1,7 +1,7 @@
 alias be='bundle exec'
 alias bi='bundle install'
 alias biq='bundle install --quiet'
-alias vi='vim'
+alias vi='nvim'
 alias folder-size='du -s ./* | sort -n | cut -f 2- | xargs -Ix du -sh x'
 alias update-vim-plugins='vim +PluginClean! +PluginInstall! +qall'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
