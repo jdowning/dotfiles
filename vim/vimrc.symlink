@@ -47,6 +47,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'wsdjeg/vim-fetch'
+Plugin 'yegappan/greplace'
 
 " Themes
 "Plugin 'nanotech/jellybeans.vim.git'
