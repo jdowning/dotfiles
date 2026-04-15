@@ -128,3 +128,18 @@ alias ls="${aliases[ls]:-ls} -A"
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
+
+# Added by dx-cli for Claude Code (native binary installation)
+export PATH="$HOME/.local/bin:$PATH"
+
+# Added by dx-cli for Claude Code CA certificates
+export NODE_EXTRA_CA_CERTS="/Users/jdowning/.claude/certs/salesforce-ca-bundle.pem"
+
+# >>> aisuite >>>
+export NODE_EXTRA_CA_CERTS="/Users/jdowning/.aisuite/conf/npm-sfdc-certs.pem"
+case ":$PATH:" in
+  *":$HOME/.local/bin:"*) ;;
+  *) [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH" ;;
+esac
+export PATH="/Users/jdowning/.aisuite/bin:/Users/jdowning/.aisuite/bin/aliases:$PATH"
+# <<< aisuite <<<
